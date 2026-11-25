@@ -1,0 +1,75 @@
+---
+import Button from './Button.astro';
+import site from '../content/sitio.json';
+---
+{site.plausibleScript && (
+  <aside class="consent" aria-labelledby="consent-title" data-consent data-script={site.plausibleScript} hidden>
+    <strong id="consent-title">Preferencias de analítica</strong>
+    <p>Si aceptas, uso Plausible para medir visitas y mejorar esta web. Puedes cambiar tu elección cuando quieras. <a href="/cookies">Política de cookies</a>.</p>
+    <div class="actions">
+      <Button variant="outline" data-choice="reject">Rechazar analítica</Button>
+      <Button variant="outline" data-choice="accept">Aceptar analítica</Button>
+    </div>
+  </aside>
+)}
+<script>
+  const banner = document.querySelector<HTMLElement>('[data-consent]');
+  const key = 'cm-analytics-v1';
+  const lifetime = 180 * 24 * 60 * 60 * 1000;
+  let current: 'accept' | 'reject' | undefined;
+  let opener: HTMLButtonElement | undefined;
+  if (banner) {
+    try {
+      const saved = JSON.parse(localStorage.getItem(key) || 'null');
+      if (saved?.until > Date.now() && ['accept', 'reject'].includes(saved.choice)) current = saved.choice;
+    } catch {}
+    const loadAnalytics = () => {
+      if (!banner.dataset.script || document.querySelector('script[data-consented]')) return;
+      type Tracker = ((...args: unknown[]) => void) & {
+        q?: unknown[][]; o?: Record<string, unknown>; init?: (options?: Record<string, unknown>) => void;
+      };
+      const analyticsWindow = window as Window & { plausible?: Tracker };
+      const tracker: Tracker = analyticsWindow.plausible ?? ((...args) => {
+        (tracker.q ??= []).push(args);
+      });
+      tracker.init ??= (options = {}) => { tracker.o = options; };
+      analyticsWindow.plausible = tracker;
+      tracker.init();
+      const script = document.createElement('script');
+      script.src = banner.dataset.script;
+      script.dataset.consented = '';
+      document.head.append(script);
+    };
+    banner.hidden = Boolean(current);
+    if (current === 'accept') loadAnalytics();
+    document.querySelectorAll<HTMLButtonElement>('[data-cookie-settings]').forEach(button => {
+      button.addEventListener('click', () => {
+        opener = button;
+        banner.hidden = false;
+        banner.querySelector('button')?.focus();
+      });
+    });
+    banner.querySelectorAll<HTMLButtonElement>('[data-choice]').forEach(button => {
+      button.addEventListener('click', () => {
+        const choice = button.dataset.choice === 'accept' ? 'accept' : 'reject';
+        let persisted = false;
+        try {
+          localStorage.setItem(key, JSON.stringify({ choice, until: Date.now() + lifetime }));
+          persisted = true;
+        } catch {}
+        if (choice === 'reject' && current === 'accept') {
+          if (persisted) {
+            location.reload();
+          } else {
+            location.replace(location.pathname + location.search);
+          }
+          return;
+        }
+        current = choice;
+        if (choice === 'accept' && persisted) loadAnalytics();
+        banner.hidden = true;
+        (opener ?? document.querySelector<HTMLElement>('main'))?.focus();
+      });
+    });
+  }
+</script>

@@ -1,0 +1,13 @@
+---
+import Icon from './Icon.astro';
+import Button from './Button.astro';
+const { service } = Astro.props;
+const { data, id } = service;
+---
+<article class:list={['service-card', { featured: data.step === '03' }]}>
+  <div class="service-top"><span class="icon-box"><Icon name={data.icon} /></span><span>{data.step} / {data.phase}</span></div>
+  <h3>{data.name}</h3>
+  <p>{data.intro}</p>
+  <ul class="check-list">{data.summary.map((item: string) => <li><Icon name="check" size={14} />{item}</li>)}</ul>
+  <Button variant="text" href={'/servicios/' + id} arrow>{data.step === '03' ? data.cta : 'Ver servicio'}</Button>
+</article>

@@ -1,0 +1,6 @@
+---
+const { steps } = Astro.props as { steps: [string, string][] };
+---
+<ol class="grid-four work-steps">
+  {steps.map(([title, text], index) => <li><span class="step-number">{index + 1}</span><h3>{title}</h3><p>{text}</p></li>)}
+</ol>

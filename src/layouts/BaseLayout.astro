@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+import WhatsAppLink from '../components/WhatsAppLink.astro';
+import site from '../content/sitio.json';
+const { title, description, type = 'website', noindex = false } = Astro.props;
+const canonical = site.dominio && new URL(Astro.url.pathname, site.dominio).href.replace(/\/$/, Astro.url.pathname === '/' ? '/' : '');
+const image = site.dominio && site.imagenSocial && new URL(site.imagenSocial, site.dominio).href;
+const personId = site.dominio ? new URL('#cesar-mesa', site.dominio).href : '#cesar-mesa';
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'Person', '@id': personId, name: site.nombre, jobTitle: 'Consultor TI y arquitecto de soluciones', url: site.dominio || undefined, sameAs: site.linkedin ? [site.linkedin] : undefined },
+    { '@type': 'ProfessionalService', name: site.marca, founder: { '@id': personId }, url: site.dominio || undefined, areaServed: { '@type': 'Country', name: 'España' }, email: site.email || undefined, image: image || undefined },
+  ],
+};
+---
+<!doctype html>
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {(noindex || !site.dominio) && <meta name="robots" content="noindex" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content={site.marca} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    {image && <meta property="og:image" content={image} />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&amp;family=Space+Grotesk:wght@500..700&amp;display=swap" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')}></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <Header />
+    <main id="contenido" tabindex="-1"><slot /></main>
+    <Footer />
+    <WhatsAppLink />
+    <CookieConsent />
+  </body>
+</html>

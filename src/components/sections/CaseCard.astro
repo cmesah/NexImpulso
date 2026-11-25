@@ -1,0 +1,14 @@
+---
+const { data } = Astro.props;
+---
+<article class="case-card">
+  <div>
+    <h3>{data.title}</h3>
+    <p>{data.description}</p>
+    <blockquote>
+      <p>{data.quote}</p>
+      <footer>{data.attribution}</footer>
+    </blockquote>
+  </div>
+  <div class="case-metric"><strong>{data.metric}</strong><span>{data.metricLabel}</span></div>
+</article>

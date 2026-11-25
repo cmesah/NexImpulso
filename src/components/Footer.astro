@@ -1,0 +1,21 @@
+---
+import site from '../content/sitio.json';
+---
+<footer class="site-footer">
+  <div class="shell footer-row">
+    <a class="brand" href="/">
+      <img src="/favicon.svg" alt="" width="38" height="38" />
+      <span><strong>{site.nombre}</strong><small>Consultoría TI</small></span>
+    </a>
+    <nav aria-label="Contacto y páginas legales">
+      <a href="/contacto">Contacto</a>
+      {site.email && <a href={'mailto:' + site.email}>Correo</a>}
+      {site.linkedin && <a href={site.linkedin}>LinkedIn</a>}
+      <a href="/blog">Blog</a>
+      <a href="/aviso-legal">Aviso legal</a>
+      <a href="/privacidad">Privacidad</a>
+      <a href="/cookies">Cookies</a>
+      {site.plausibleScript && <button type="button" data-cookie-settings>Preferencias</button>}
+    </nav>
+  </div>
+</footer>

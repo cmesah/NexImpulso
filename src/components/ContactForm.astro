@@ -1,0 +1,21 @@
+---
+import Button from './Button.astro';
+import copy from '../content/contacto.json';
+const { name = 'diagnostico' } = Astro.props;
+---
+<form class="contact-form" name={name} method="POST" action="/gracias/" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value={name} />
+  <p hidden><label>No rellenes este campo <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+  <div class="form-row">
+    <label>{copy.fields[0]} <input name="nombre" autocomplete="name" required maxlength="120" /></label>
+    <label>{copy.fields[1]} <input name="email" type="email" autocomplete="email" required maxlength="254" /></label>
+  </div>
+  <label>{copy.fields[2]} <input name="empresa" autocomplete="organization" required maxlength="160" /></label>
+  <label>{copy.fields[3]} <textarea name="mensaje" rows="4" required maxlength="2500"></textarea></label>
+  <div class="check-row">
+    <p class="privacy-summary">{copy.privacySummary}</p>
+    <label><input name="privacidad" type="checkbox" value="confirmada" required /> <span>{copy.privacy}</span></label>
+    <a href="/privacidad">Política de privacidad</a>
+  </div>
+  <Button type="submit" arrow>{copy.submit}</Button>
+</form>

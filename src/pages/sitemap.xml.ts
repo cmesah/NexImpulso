@@ -1,0 +1,22 @@
+import { getCollection } from 'astro:content';
+import site from '../content/sitio.json';
+
+export async function GET() {
+  const [services, articles, legal] = await Promise.all([
+    getCollection('servicios'), getCollection('blog'), getCollection('legal'),
+  ]);
+  const paths = [
+    '/', '/como-trabajo', '/casos', '/sobre-mi', '/blog', '/contacto',
+    ...services.map(item => '/servicios/' + item.id),
+    ...articles.map(item => '/blog/' + item.id),
+    ...legal.map(item => '/' + item.id),
+  ];
+  const entries = site.dominio ? paths.map(path => {
+    const url = new URL(path, site.dominio).href.replace(/&/g, '&amp;');
+    return '<url><loc>' + url + '</loc></url>';
+  }).join('') : '';
+  return new Response('<?xml version="1.0" encoding="UTF-8"?>\n' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + entries + '</urlset>', {
+    headers: { 'Content-Type': 'application/xml; charset=utf-8' },
+  });
+}

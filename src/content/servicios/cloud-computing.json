@@ -1,0 +1,60 @@
+{
+  "step": "02",
+  "phase": "Escalar",
+  "icon": "cloud",
+  "name": "Cloud Computing",
+  "hero": "Migra a la nube con costes y riesgos bajo control",
+  "intro": "Planifico la migración de tu pyme por fases, con seguridad, costes previsibles y copias que puedes restaurar.",
+  "cta": "Revisa tu migración conmigo",
+  "symptoms": [
+    "Una aplicación crítica depende de un servidor en la oficina.",
+    "Pagas recursos de nube que apenas utilizas.",
+    "Hace tiempo que nadie restaura una copia de seguridad."
+  ],
+  "work": [
+    [
+      "Migración a la nube para pymes",
+      "Inventario las dependencias, pruebo por etapas y preparo un plan de reversión."
+    ],
+    [
+      "Optimización de costes",
+      "Reviso consumo, dimensionamiento y alertas de presupuesto."
+    ],
+    [
+      "Continuidad y seguridad",
+      "Defino objetivos de recuperación y pruebo las restauraciones con un alcance acordado."
+    ]
+  ],
+  "uses": [
+    "Trasladar una aplicación de gestión y su base de datos.",
+    "Preparar un entorno de pruebas separado de producción.",
+    "Revisar copias y ejecutar una restauración documentada."
+  ],
+  "results": [
+    "Coste mensual medido",
+    "Tiempo de recuperación",
+    "Disponibilidad de la aplicación"
+  ],
+  "tech": [
+    "AWS",
+    "Microsoft Azure",
+    "Terraform"
+  ],
+  "faq": [
+    [
+      "¿Necesitaré una parada?",
+      "Depende de la aplicación. Durante el plan determino si hace falta una ventana y cómo limitar su duración."
+    ],
+    [
+      "¿Cómo estimo la factura?",
+      "Modelo el coste con el uso actual y planteo alertas para revisar desviaciones."
+    ]
+  ],
+  "title": "Cloud Computing para pymes | César Mesa",
+  "description": "Planifico la migración de tu pyme por fases, con seguridad, costes previsibles y copias que puedes restaurar.",
+  "summary": [
+    "Migración por fases",
+    "Optimización de costes",
+    "Seguridad y copias de seguridad"
+  ]
+}

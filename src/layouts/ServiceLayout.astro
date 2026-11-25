@@ -1,0 +1,45 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { siPostgresql, siPython, siTerraform } from 'simple-icons';
+import BaseLayout from './BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import Button from '../components/Button.astro';
+import FAQ from '../components/FAQ.astro';
+const { service } = Astro.props as { service: CollectionEntry<'servicios'> };
+const { data } = service;
+const all = (await getCollection('servicios')).sort((a, b) => a.data.step.localeCompare(b.data.step));
+const next = all[all.findIndex(item => item.id === service.id) + 1];
+const fallbackLogos: Record<string, { path: string }> = { PostgreSQL: siPostgresql, Python: siPython, Terraform: siTerraform };
+const logos = import.meta.glob<string>('../assets/logos/*.svg', { eager: true, query: '?url', import: 'default' });
+function logoFor(brand: string) {
+  return logos['../assets/logos/' + brand.toLowerCase().replaceAll(' ', '-') + '.svg'];
+}
+---
+<BaseLayout title={data.title} description={data.description}>
+  <section class="page-hero"><div class="shell">
+    <p class="eyebrow"><span></span>{data.phase} · {data.name}</p>
+    <h1>{data.hero}</h1><p class="lead">{data.intro}</p>
+    <Button href="#consulta" arrow>{data.cta}</Button>
+  </div></section>
+  <section class="section white-section"><div class="shell"><h2>¿Te pasa esto?</h2>
+    <ul class="grid-three symptom-list">{data.symptoms.map((text: string) => <li class="problem-card"><Icon name={data.icon} /><p>{text}</p></li>)}</ul>
+  </div></section>
+  <section class="section"><div class="shell"><h2>Qué hago</h2><div class="grid-three">
+    {data.work.map(([title, text]: [string, string]) => <article class="problem-card"><h3>{title}</h3><p>{text}</p></article>)}
+  </div></div></section>
+  <section class="section white-section"><div class="shell faq-grid"><div><h2>Casos de uso</h2><ul class="check-list">{data.uses.map((use: string) => <li><Icon name="check" />{use}</li>)}</ul></div>
+    <div><h2>Resultados que mido</h2><ul class="check-list">{data.results.map((result: string) => <li><Icon name="check" />{result}</li>)}</ul></div>
+  </div></section>
+  <section class="section"><div class="shell"><h2>Tecnologías</h2><ul class="tags">
+    {data.tech.map((brand: string) => <li>{logoFor(brand) ? <img width="22" height="22" loading="lazy" src={logoFor(brand)} alt="" />
+      : fallbackLogos[brand] && <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d={fallbackLogos[brand].path} /></svg>}{brand}</li>)}
+  </ul></div></section>
+  <section class="section white-section"><div class="shell faq-grid"><h2>Preguntas frecuentes</h2><FAQ items={data.faq} /></div></section>
+  <section class="section dark-section" id="consulta"><div class="shell">
+    <h2>{data.cta}</h2><p class="lead">Dedico 30 minutos a entender tu situación y valorar contigo un primer paso.</p>
+    <div class="actions"><Button href="/contacto" arrow>Solicitar diagnóstico gratuito</Button>
+      {next ? <Button variant="text" href={'/servicios/' + next.id} arrow>Siguiente paso · {next.data.name}</Button>
+      : <Button variant="text" href="/#servicios" arrow>Ver todos los servicios</Button>}
+    </div>
+  </div></section>
+</BaseLayout>

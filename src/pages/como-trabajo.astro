@@ -1,0 +1,13 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WorkSteps from '../components/sections/WorkSteps.astro';
+import Button from '../components/Button.astro';
+const entry = (await getEntry('paginas', 'como-trabajo'))!;
+const { Content } = await render(entry);
+const { data } = entry;
+---
+<BaseLayout title={data.title} description={data.description}>
+  <section class="page-hero"><div class="shell"><h1>{data.hero}</h1><p class="lead">{data.intro}</p></div></section>
+  <section class="section white-section"><div class="shell"><WorkSteps steps={data.steps ?? []} /><div class="prose"><Content /><Button href="/contacto" arrow>Solicitar diagnóstico gratuito</Button></div></div></section>
+</BaseLayout>

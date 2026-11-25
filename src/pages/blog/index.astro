@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/Button.astro';
+import copy from '../../content/blog.json';
+const entries = await getCollection('blog');
+---
+<BaseLayout title={copy.title} description={copy.description}>
+  <section class="page-hero"><div class="shell"><h1>{copy.hero}</h1><p class="lead">{copy.description}</p></div></section>
+  <section class="section white-section"><div class="shell grid-three">{entries.map(({ id, data }) => <article class="problem-card"><h2>{data.title}</h2><p>{data.description}</p><Button href={'/blog/' + id} variant="text" arrow>Leer artículo</Button></article>)}</div></section>
+</BaseLayout>

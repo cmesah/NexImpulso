@@ -1,0 +1,15 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import Button from '../components/Button.astro';
+import site from '../content/sitio.json';
+const { id } = Astro.props;
+const entry = (await getEntry('legal', id))!;
+const { Content } = await render(entry);
+---
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  <section class="page-hero"><div class="shell"><h1>{entry.data.hero}</h1></div></section>
+  <section class="section white-section"><div class="shell prose"><Content />
+    {id === 'cookies' && site.plausibleScript && <Button variant="outline" data-cookie-settings>Cambiar mis preferencias</Button>}
+  </div></section>
+</BaseLayout>

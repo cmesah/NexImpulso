@@ -1,0 +1,29 @@
+{
+  "nombre": "César Mesa",
+  "marca": "César Mesa · Consultoría TI",
+  "dominio": "",
+  "email": "",
+  "linkedin": "",
+  "calendly": "",
+  "whatsapp": "",
+  "plausibleScript": "",
+  "imagenSocial": "/social.png",
+  "menu": [
+    [
+      "Servicios",
+      "/#servicios"
+    ],
+    [
+      "Cómo trabajo",
+      "/como-trabajo"
+    ],
+    [
+      "Casos",
+      "/casos"
+    ],
+    [
+      "Sobre mí",
+      "/sobre-mi"
+    ]
+  ]
+}

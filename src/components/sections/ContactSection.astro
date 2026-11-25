@@ -1,0 +1,20 @@
+---
+import site from '../../content/sitio.json';
+import copy from '../../content/contacto.json';
+import Button from '../Button.astro';
+import Icon from '../Icon.astro';
+import ContactForm from '../ContactForm.astro';
+const { page = false } = Astro.props;
+const Heading = page ? 'h1' : 'h2';
+---
+<section class="section contact-section" id="diagnostico">
+  <div class="shell contact-grid">
+    <div>
+      <span class="icon-box"><Icon name="calendar" /></span>
+      <Heading>{copy.hero}</Heading>
+      <p class="lead">{copy.intro}</p>
+      {site.calendly && <Button href={site.calendly} variant="outline" arrow>{copy.book}</Button>}
+    </div>
+    <ContactForm name={page ? 'diagnostico-contacto' : 'diagnostico-inicio'} />
+  </div>
+</section>

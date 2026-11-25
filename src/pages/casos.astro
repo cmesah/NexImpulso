@@ -1,0 +1,15 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import CaseCard from '../components/sections/CaseCard.astro';
+import copy from '../content/casos.json';
+const cases = await Promise.all((await getCollection('casos')).map(async entry => ({ ...entry, ...await render(entry) })));
+---
+<BaseLayout title={copy.title} description={copy.description}>
+  <section class="page-hero"><div class="shell"><h1>{copy.hero}</h1><p class="lead">{copy.intro}</p></div></section>
+  <section class="section white-section"><div class="shell">
+    {cases.map(({data, Content}) => <div class="case-detail"><CaseCard data={data} /><div class="prose"><Content /></div></div>)}
+    <Button href="/contacto" arrow>Cuéntame tu caso</Button>
+  </div></section>
+</BaseLayout>

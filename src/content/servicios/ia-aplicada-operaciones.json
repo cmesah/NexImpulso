@@ -1,0 +1,60 @@
+{
+  "step": "03",
+  "phase": "Automatizar",
+  "icon": "sparkles",
+  "name": "IA aplicada a operaciones",
+  "hero": "Aplica IA donde pueda ahorrar tiempo medible",
+  "intro": "Te ayudo a clasificar documentos y correos, crear asistentes internos y evaluar previsiones e informes.",
+  "cta": "Evalúa tu preparación para la IA",
+  "symptoms": [
+    "Tu equipo revisa manualmente los mismos tipos de documentos.",
+    "Las consultas internas requieren buscar en varias carpetas.",
+    "Preparar un informe o una previsión lleva horas cada semana."
+  ],
+  "work": [
+    [
+      "Procesamiento de documentos",
+      "Pruebo la extracción y clasificación en una muestra y marco dudas para revisión."
+    ],
+    [
+      "Asistentes internos",
+      "Diseño asistentes que consultan documentación autorizada y muestran sus fuentes."
+    ],
+    [
+      "Previsión e informes",
+      "Evalúo el histórico y comparo las previsiones con una referencia sencilla antes de integrarlas."
+    ]
+  ],
+  "uses": [
+    "Extraer referencias y cantidades de pedidos en PDF.",
+    "Orientar consultas internas sobre procedimientos vigentes.",
+    "Preparar un borrador de informe operativo con datos revisados."
+  ],
+  "results": [
+    "Tiempo de revisión humana",
+    "Exactitud por campo",
+    "Consultas resueltas con fuentes"
+  ],
+  "tech": [
+    "Amazon Bedrock",
+    "Python",
+    "Microsoft Power Automate"
+  ],
+  "faq": [
+    [
+      "¿Puedo empezar con pocos datos?",
+      "Para documentos, una muestra representativa permite plantear un piloto. Para previsión, necesito revisar la cobertura y calidad del histórico."
+    ],
+    [
+      "¿Quién revisa las respuestas?",
+      "Acordamos qué resultados necesitan validación humana y qué datos puede consultar cada perfil."
+    ]
+  ],
+  "title": "IA aplicada a operaciones para pymes | César Mesa",
+  "description": "Te ayudo a clasificar documentos y correos, crear asistentes internos y evaluar previsiones e informes.",
+  "summary": [
+    "Clasificación de documentos y correos",
+    "Asistentes internos",
+    "Previsión de demanda e informes"
+  ]
+}

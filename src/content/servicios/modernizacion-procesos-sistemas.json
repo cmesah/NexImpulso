@@ -1,0 +1,60 @@
+{
+  "step": "01",
+  "phase": "Ordenar",
+  "icon": "workflow",
+  "name": "Modernización de procesos y sistemas",
+  "hero": "Reduce el trabajo manual y recupera el control de tus procesos",
+  "intro": "Te ayudo a renovar aplicaciones heredadas, automatizar flujos y conectar tu ERP y tu CRM.",
+  "cta": "Revisa tu proceso conmigo",
+  "symptoms": [
+    "Copias los datos de un pedido en varias aplicaciones.",
+    "Las aprobaciones se quedan en correos sin responsable.",
+    "Cualquier cambio en tu aplicación heredada resulta difícil de probar."
+  ],
+  "work": [
+    [
+      "Rediseño de flujos",
+      "Dibujo el recorrido real del trabajo y priorizo los pasos que se pueden simplificar."
+    ],
+    [
+      "Modernización gradual",
+      "Reviso qué partes del sistema conviene actualizar por separado y preparo la transición."
+    ],
+    [
+      "Integración de ERP y CRM",
+      "Conecto aplicaciones para que compartan los datos necesarios de forma trazable."
+    ]
+  ],
+  "uses": [
+    "Registrar pedidos de clientes con estado y responsable.",
+    "Digitalizar las aprobaciones de compras.",
+    "Sincronizar altas de clientes entre el CRM y el ERP."
+  ],
+  "results": [
+    "Tiempo por trámite",
+    "Pasos manuales por expediente",
+    "Errores de registro"
+  ],
+  "tech": [
+    "Bizagi",
+    "Microsoft Power Apps",
+    "PostgreSQL"
+  ],
+  "faq": [
+    [
+      "¿Hay que sustituir mi ERP?",
+      "Primero reviso qué flujos e integraciones admite el ERP que ya utilizas."
+    ],
+    [
+      "¿Cómo sé si merece la pena?",
+      "Mido el tiempo y los errores del proceso actual y comparo el resultado después de un piloto."
+    ]
+  ],
+  "title": "Modernización de procesos y sistemas para pymes | César Mesa",
+  "description": "Te ayudo a renovar aplicaciones heredadas, automatizar flujos y conectar tu ERP y tu CRM.",
+  "summary": [
+    "Migración de sistemas heredados",
+    "Automatización de flujos",
+    "Integración de ERP y CRM"
+  ]
+}
