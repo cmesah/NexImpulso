@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import copy from '../content/test-madurez.json';
+const collectEmail = copy.email.enabled && copy.email.privacySummary && copy.email.consent;
+---
+<BaseLayout title={copy.title} description={copy.description}>
+  <section class="page-hero brand-hero grid-surface">
+    <div class="shell">
+      <h1>Test de madurez cloud e IA</h1>
+      <p class="lead">{copy.description}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="shell maturity-shell" id="test-madurez">
+      <noscript><p>Activa JavaScript para hacer el test o <a href="/contacto">solicita un diagnóstico gratuito</a>.</p></noscript>
+      <div class="maturity-card" data-quiz hidden>
+        <label class="section-tag" for="maturity-progress" data-progress-label>Pregunta 1 de {copy.questions.length}</label>
+        <progress id="maturity-progress" max={copy.questions.length} value="1"></progress>
+        <form data-questions>
+          {copy.questions.map(({ area, prompt, options }, index) => (
+            <fieldset data-step hidden>
+              <legend tabindex="-1">{prompt}</legend>
+              <p class="section-tag">{copy.areas[area as keyof typeof copy.areas].label}</p>
+              {options.map((option, points) => (
+                <label class="maturity-option">
+                  <input type="radio" name={'pregunta-' + index} value={points} required />
+                  <span>{option}</span>
+                </label>
+              ))}
+            </fieldset>
+          ))}
+          <div class="actions maturity-actions">
+            <Button type="button" variant="outline" data-prev hidden>Anterior</Button>
+            <Button type="submit" data-next arrow>Siguiente</Button>
+          </div>
+        </form>
+      </div>
+      <div class="maturity-card" data-result hidden>
+        <h2 tabindex="-1">Vuestro resultado</h2>
+        <p class="maturity-score" data-overall></p>
+        <p class="lead" data-level></p>
+        <dl class="maturity-areas" data-areas></dl>
+        <h3>Tres recomendaciones</h3>
+        <ol class="maturity-recommendations" data-recommendations></ol>
+        <div class="actions">
+          <Button href="/contacto" arrow>Solicita tu diagnóstico gratuito</Button>
+          <Button type="button" variant="outline" data-restart>Repetir el test</Button>
+        </div>
+        {collectEmail && (
+          <form class="contact-form maturity-email" name="test-madurez" method="POST" action="/gracias/" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="test-madurez" />
+            <p hidden><label>No rellenes este campo <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+            <h3>¿Quieres que hablemos del resultado?</h3>
+            <label>Correo electrónico (opcional) <input type="email" name="email" autocomplete="email" required maxlength="254" /></label>
+            <p class="privacy-summary">{copy.email.privacySummary} <a href="/privacidad">Política de privacidad</a></p>
+            <label class="maturity-option"><input type="checkbox" name="consentimiento" value="aceptado" required /> {copy.email.consent}</label>
+            <Button type="submit">Solicitar contacto</Button>
+          </form>
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { evaluateMaturity } from '../lib/maturity';
+  const root = document.querySelector<HTMLElement>('#test-madurez')!;
+  const quiz = root.querySelector<HTMLElement>('[data-quiz]')!;
+  const form = root.querySelector<HTMLFormElement>('[data-questions]')!;
+  const steps = [...form.querySelectorAll<HTMLFieldSetElement>('[data-step]')];
+  const progress = root.querySelector<HTMLProgressElement>('progress')!;
+  const progressLabel = root.querySelector<HTMLElement>('[data-progress-label]')!;
+  const previous = root.querySelector<HTMLButtonElement>('[data-prev]')!;
+  const next = root.querySelector<HTMLButtonElement>('[data-next]')!;
+  const result = root.querySelector<HTMLElement>('[data-result]')!;
+  const answers: number[] = [];
+  let current = 0;
+
+  function showStep(index: number, focus = true) {
+    current = index;
+    steps.forEach((step, position) => {
+      step.hidden = step.disabled = position !== index;
+    });
+    progress.value = index + 1;
+    progressLabel.textContent = `Pregunta ${index + 1} de ${steps.length}`;
+    previous.hidden = index === 0;
+    next.firstChild!.textContent = index === steps.length - 1 ? 'Ver resultado' : 'Siguiente';
+    if (focus) steps[index].querySelector('legend')?.focus();
+  }
+
+  function rememberAnswer() {
+    const checked = steps[current].querySelector<HTMLInputElement>(':checked');
+    if (checked) answers[current] = Number(checked.value);
+  }
+
+  function showResult() {
+    const evaluation = evaluateMaturity(answers);
+    result.querySelector('[data-overall]')!.textContent = evaluation.overall + ' / 100';
+    result.querySelector('[data-level]')!.textContent = evaluation.level;
+    result.querySelector('[data-areas]')!.replaceChildren(...evaluation.areas.map(({ label, score }) => {
+      const group = document.createElement('div');
+      const term = document.createElement('dt');
+      const value = document.createElement('dd');
+      term.textContent = label;
+      value.textContent = score + ' / 100';
+      group.append(term, value);
+      return group;
+    }));
+    result.querySelector('[data-recommendations]')!.replaceChildren(...evaluation.recommendations.map(({ label, text }) => {
+      const item = document.createElement('li');
+      const title = document.createElement('strong');
+      title.textContent = label;
+      item.append(title, document.createTextNode(' — ' + text));
+      return item;
+    }));
+    quiz.hidden = true;
+    result.hidden = false;
+    result.querySelector('h2')?.focus();
+  }
+
+  previous.addEventListener('click', () => {
+    rememberAnswer();
+    showStep(current - 1);
+  });
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    rememberAnswer();
+    if (current < steps.length - 1) showStep(current + 1);
+    else showResult();
+  });
+  root.querySelector('[data-restart]')?.addEventListener('click', () => {
+    form.reset();
+    answers.length = 0;
+    result.querySelector('form')?.reset();
+    result.hidden = true;
+    quiz.hidden = false;
+    showStep(0);
+  });
+  showStep(0, false);
+  quiz.hidden = false;
+</script>
+
+<style>
+  .maturity-shell { max-width: 760px; }
+  .maturity-card { padding: clamp(1rem, 4vw, 2.25rem); background: white; border: 1px solid var(--color-line); border-radius: 18px; }
+  progress { width: 100%; display: block; accent-color: var(--color-accent); margin-bottom: 1.25rem; }
+  legend { font: 700 clamp(1.3rem, 3vw, 1.8rem)/1.25 var(--font-display); margin-bottom: .65rem; }
+  .maturity-option { display: flex; align-items: baseline; gap: .65rem; padding: .7rem; border: 1px solid var(--color-line); border-radius: 10px; margin-bottom: .5rem; cursor: pointer; }
+  .maturity-option:has(:checked) { background: var(--color-mint); border-color: var(--color-accent); }
+  input { accent-color: var(--color-accent); }
+  .maturity-actions, .maturity-email { margin-top: 1.25rem; }
+  .maturity-score { font: 700 clamp(2rem, 5vw, 3rem) var(--font-display); color: var(--color-accent); margin-top: .45rem; }
+  .maturity-areas { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .5rem; margin-bottom: 1.5rem; }
+  .maturity-areas > :global(div) { background: var(--color-mint); padding: .65rem; border-radius: 10px; }
+  .maturity-areas :global(dt) { overflow-wrap: anywhere; }
+  .maturity-areas :global(dd) { font-family: var(--font-mono); }
+  .maturity-recommendations { list-style: decimal; padding-left: 1.35rem; margin-block: .7rem 1.3rem; }
+  .maturity-recommendations :global(li) { margin-bottom: .55rem; }
+</style>

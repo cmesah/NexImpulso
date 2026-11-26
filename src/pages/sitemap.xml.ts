@@ -7,7 +7,7 @@ export const GET: APIRoute = async ({ site }) => {
     getCollection('servicios'), getCollection('blog'), getCollection('legal'),
   ]);
   const paths = [
-    '/', '/como-trabajamos', '/casos', '/quienes-somos', '/blog', '/contacto',
+    '/', '/como-trabajamos', '/casos', '/quienes-somos', '/blog', '/contacto', '/test-madurez',
     ...services.map(item => '/servicios/' + item.id),
     ...articles.map(item => '/blog/' + item.id),
     ...legal.map(item => '/' + item.id),

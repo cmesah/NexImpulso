@@ -1,0 +1,150 @@
+{
+  "title": "Test de madurez cloud e IA para pymes | Nexo Impulso",
+  "description": "Evalúa cómo está tu pyme en procesos, infraestructura, datos e IA. Responde diez preguntas y recibe tres recomendaciones.",
+  "areas": {
+    "procesos": {
+      "label": "Procesos",
+      "recommendations": [
+        "Documentad un proceso repetitivo, asignad un responsable y medid cuánto tarda de principio a fin.",
+        "Elegid el paso manual que más tiempo consume, automatizadlo en un piloto y comparad el tiempo y los errores.",
+        "Ampliad las automatizaciones que ya funcionan y revisad cómo se gestionan las excepciones."
+      ]
+    },
+    "infraestructura": {
+      "label": "Infraestructura",
+      "recommendations": [
+        "Inventariad los sistemas críticos, identificad sus responsables y probad la restauración de una copia de seguridad.",
+        "Preparad un entorno de prueba para una aplicación e incorporad alertas de costes y objetivos de recuperación.",
+        "Revisad los costes y tiempos de recuperación con datos reales antes de ampliar la migración."
+      ]
+    },
+    "datos": {
+      "label": "Datos",
+      "recommendations": [
+        "Elegid una fuente de referencia para los datos del proceso y asignad a alguien la responsabilidad de mantenerla.",
+        "Definid controles para detectar duplicados y revisad los permisos de acceso antes de integrar herramientas.",
+        "Medid la calidad de los datos por fuente y programad revisiones periódicas de permisos y conservación."
+      ]
+    },
+    "ia": {
+      "label": "IA",
+      "recommendations": [
+        "Elegid una tarea repetitiva y comprobad primero si puede resolverse con reglas sencillas.",
+        "Preparad un piloto con una muestra representativa, criterios de aceptación y revisión humana.",
+        "Ampliad solo los pilotos que hayan mostrado mejoras medibles y mantened un conjunto de pruebas para detectar errores."
+      ]
+    }
+  },
+  "levels": [
+    "Preparar las bases",
+    "Priorizar un piloto",
+    "Consolidar y escalar"
+  ],
+  "email": {
+    "enabled": false,
+    "privacySummary": "",
+    "consent": ""
+  },
+  "questions": [
+    {
+      "area": "procesos",
+      "prompt": "¿Está documentado vuestro proceso más repetitivo?",
+      "options": [
+        "Depende de quién lo haga",
+        "Hay notas dispersas",
+        "Están definidos los pasos y los responsables",
+        "Lo revisamos y actualizamos periódicamente"
+      ]
+    },
+    {
+      "area": "procesos",
+      "prompt": "¿Cuánto trabajo manual requiere?",
+      "options": [
+        "Casi todo es manual",
+        "Usamos plantillas, pero copiamos datos entre herramientas",
+        "Algunos pasos están automatizados",
+        "El flujo principal y sus excepciones tienen seguimiento"
+      ]
+    },
+    {
+      "area": "procesos",
+      "prompt": "¿Cómo medís el resultado?",
+      "options": [
+        "Todavía no lo medimos",
+        "Tenemos estimaciones",
+        "Medimos el tiempo o los errores",
+        "Revisamos métricas y decidimos mejoras con ellas"
+      ]
+    },
+    {
+      "area": "infraestructura",
+      "prompt": "¿Qué sabéis de los sistemas críticos?",
+      "options": [
+        "Dependemos de una persona para saber cómo funcionan",
+        "Hay un inventario parcial",
+        "Conocemos las aplicaciones y sus responsables",
+        "También documentamos dependencias y prioridades"
+      ]
+    },
+    {
+      "area": "infraestructura",
+      "prompt": "¿Cómo recuperaríais un sistema tras una caída?",
+      "options": [
+        "No tenemos un plan definido",
+        "Hay copias, pero no hemos probado a restaurarlas",
+        "Hemos probado la restauración",
+        "Probamos periódicamente y medimos cuánto tarda"
+      ]
+    },
+    {
+      "area": "infraestructura",
+      "prompt": "¿Cómo controláis los costes tecnológicos?",
+      "options": [
+        "Solo miramos la factura total",
+        "Revisamos los costes de vez en cuando",
+        "Tenemos un presupuesto y una persona responsable",
+        "Usamos alertas y revisamos las desviaciones"
+      ]
+    },
+    {
+      "area": "datos",
+      "prompt": "¿Tenéis una fuente fiable para los datos del proceso?",
+      "options": [
+        "Hay versiones contradictorias",
+        "Consolidamos la información a mano",
+        "Existe una fuente principal",
+        "La fuente tiene responsable y controles de calidad"
+      ]
+    },
+    {
+      "area": "datos",
+      "prompt": "¿Cómo gestionáis el acceso y el uso de los datos?",
+      "options": [
+        "Los accesos se comparten sin revisión",
+        "Se conceden caso por caso",
+        "Hay permisos por función",
+        "Los permisos se revisan y hay reglas de uso y conservación"
+      ]
+    },
+    {
+      "area": "ia",
+      "prompt": "¿Tenéis una tarea concreta candidata a un piloto?",
+      "options": [
+        "Aún no la hemos identificado",
+        "Tenemos ideas generales",
+        "Hay una tarea y un responsable",
+        "También sabemos cómo medir si el piloto aporta valor"
+      ]
+    },
+    {
+      "area": "ia",
+      "prompt": "¿Cómo validaríais una respuesta o un documento generado con IA?",
+      "options": [
+        "No lo hemos definido",
+        "Se revisaría si alguien detecta un error",
+        "Hay una persona responsable y criterios de revisión",
+        "Hay muestras de prueba, umbrales y un proceso para tratar los errores"
+      ]
+    }
+  ]
+}
