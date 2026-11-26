@@ -1,5 +1,5 @@
 {
-  "title": "Nexo Impulso | Consultoría tecnológica para pymes en España",
+  "title": "Nexo Impulso | Consultoría tecnológica para pymes",
   "description": "Te ayudamos a automatizar procesos empresariales, migrar a la nube y aplicar IA en tu pyme. Solicita un diagnóstico gratuito de 30 minutos.",
   "etiqueta": "modernización · cloud · ia",
   "hero": "Moderniza, migra a la nube y automatiza con IA.",
@@ -23,14 +23,14 @@
   "faqTitulo": "Preguntas frecuentes",
   "faq": [
     ["¿En qué nos puede ayudar Nexo Impulso?", "Ayudamos a pymes a automatizar tareas manuales, modernizar aplicaciones, migrar a la nube y aplicar IA a procesos concretos. Por ejemplo, podemos revisar cómo entran los pedidos, por qué se duplican datos y qué parte del proceso merece automatizarse primero."],
-    ["¿Qué incluye el diagnóstico gratuito de 30 minutos?", "En una primera llamada nos cuentas cómo funciona el proceso, qué herramientas utilizáis y dónde se atasca el trabajo. Revisamos contigo qué mejora conviene explorar primero y qué información necesitaríamos para preparar una propuesta."],
+    ["¿Qué incluye el diagnóstico gratuito de 30 minutos?", "En una primera llamada nos cuentas cómo funciona el proceso, qué herramientas usan y en qué parte se traba el trabajo. Revisamos contigo qué mejora conviene explorar primero y qué información necesitaríamos para preparar una propuesta."],
     ["¿Cuánto cuesta un proyecto y cuánto tarda?", "Depende del número de procesos, las integraciones y el estado de los sistemas actuales. Antes de empezar te presentamos una propuesta con el alcance, los entregables, el precio y el calendario previsto. Podemos acotar el primer paso a un proceso o a un piloto."],
     ["¿Se pueden aprovechar el ERP, el CRM o las hojas de cálculo que ya usamos?", "Primero revisamos qué conviene conservar y qué datos necesitan compartir las herramientas. Si el ERP o el CRM admite integración, podemos conectarlo con el flujo actual. En el caso de las hojas de cálculo, identificamos cuáles conviene mantener y dónde un registro compartido evitaría errores o duplicados."],
-    ["¿Tenemos que parar la operación para hacer los cambios?", "Planificamos los cambios por fases y probamos el nuevo flujo antes de trasladar el trabajo. Si hace falta una parada, acordamos la ventana con tu equipo y dejamos preparado un plan para volver atrás si surge un problema."],
-    ["¿Cómo evitamos sorpresas en la factura de la nube?", "Estimamos los costes a partir del uso previsto e identificamos qué servicios podrían encarecerse al crecer. Si el proyecto incluye la puesta en marcha en la nube, acordamos presupuestos, alertas de consumo y qué revisar después de la migración."],
+    ["¿Tenemos que parar la operación para hacer los cambios?", "Planificamos los cambios por fases y probamos el nuevo flujo antes de trasladar el trabajo. Si es necesario interrumpir la operación, acordamos la ventana con tu equipo y dejamos preparado un plan para volver atrás si surge un problema."],
+    ["¿Cómo evitamos sorpresas en la factura de la nube?", "Estimamos los costos a partir del uso previsto e identificamos qué servicios podrían encarecerse al crecer. Si el proyecto incluye la implementación en la nube, acordamos presupuestos, alertas de consumo y qué revisar después de la migración."],
     ["¿Tiene sentido usar IA si somos una pyme?", "Sí, si hay una tarea repetitiva cuyo resultado se puede revisar y medir. Podemos probar con una muestra de pedidos en PDF, por ejemplo, y comparar el tiempo de revisión y los errores. Si con reglas sencillas basta, te proponemos esa opción."],
-    ["¿Cómo protegéis nuestros datos durante el proyecto?", "Acordamos qué datos se necesitan y quién puede acceder a ellos. Para una prueba, priorizamos muestras anonimizadas o datos sintéticos cuando sirven para validar el proceso. Si interviene un proveedor de nube o IA, revisamos con tu equipo cómo se tratarán los datos antes de utilizarlos."],
-    ["¿Cómo sabremos si el proyecto ha funcionado?", "Acordamos qué medir antes de empezar, como el tiempo por pedido, el número de pasos manuales o los errores de registro. Después del piloto o de la puesta en marcha, comparamos los resultados con el proceso inicial para decidir si conviene ampliar la solución."],
-    ["¿Qué pasa después de la puesta en marcha?", "Documentamos cómo operar la solución y revisamos contigo los resultados. Si tu equipo necesita formación, soporte o ajustes posteriores, acordamos de antemano el alcance y la duración del acompañamiento."]
+    ["¿Cómo protegen nuestros datos durante el proyecto?", "Acordamos qué datos se necesitan y quién puede acceder a ellos. Para una prueba, priorizamos muestras anonimizadas o datos sintéticos cuando sirven para validar el proceso. Si interviene un proveedor de nube o IA, revisamos con tu equipo cómo se tratarán los datos antes de utilizarlos."],
+    ["¿Cómo sabremos si el proyecto ha funcionado?", "Acordamos qué medir antes de empezar, como el tiempo por pedido, el número de pasos manuales o los errores de registro. Después del piloto o de la implementación, comparamos los resultados con el proceso inicial para decidir si conviene ampliar la solución."],
+    ["¿Qué pasa después de la implementación?", "Documentamos cómo operar la solución y revisamos contigo los resultados. Si tu equipo necesita formación, soporte o ajustes posteriores, acordamos de antemano el alcance y la duración del acompañamiento."]
   ]
 }

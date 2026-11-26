@@ -5,33 +5,33 @@
     "procesos": {
       "label": "Procesos",
       "recommendations": [
-        "Documentad un proceso repetitivo, asignad un responsable y medid cuánto tarda de principio a fin.",
-        "Elegid el paso manual que más tiempo consume, automatizadlo en un piloto y comparad el tiempo y los errores.",
-        "Ampliad las automatizaciones que ya funcionan y revisad cómo se gestionan las excepciones."
+        "Documenten un proceso repetitivo, asignen un responsable y midan cuánto tarda de principio a fin.",
+        "Elijan el paso manual que más tiempo consume, automatícenlo en un piloto y comparen el tiempo y los errores.",
+        "Amplíen las automatizaciones que ya funcionan y revisen cómo se gestionan las excepciones."
       ]
     },
     "infraestructura": {
       "label": "Infraestructura",
       "recommendations": [
-        "Inventariad los sistemas críticos, identificad sus responsables y probad la restauración de una copia de seguridad.",
-        "Preparad un entorno de prueba para una aplicación e incorporad alertas de costes y objetivos de recuperación.",
-        "Revisad los costes y tiempos de recuperación con datos reales antes de ampliar la migración."
+        "Hagan un inventario de los sistemas críticos, identifiquen sus responsables y prueben la restauración de una copia de respaldo.",
+        "Preparen un entorno de prueba para una aplicación e incorporen alertas de costos y objetivos de recuperación.",
+        "Revisen los costos y tiempos de recuperación con datos reales antes de ampliar la migración."
       ]
     },
     "datos": {
       "label": "Datos",
       "recommendations": [
-        "Elegid una fuente de referencia para los datos del proceso y asignad a alguien la responsabilidad de mantenerla.",
-        "Definid controles para detectar duplicados y revisad los permisos de acceso antes de integrar herramientas.",
-        "Medid la calidad de los datos por fuente y programad revisiones periódicas de permisos y conservación."
+        "Elijan una fuente de referencia para los datos del proceso y asignen a alguien la responsabilidad de mantenerla.",
+        "Definan controles para detectar duplicados y revisen los permisos de acceso antes de integrar herramientas.",
+        "Midan la calidad de los datos por fuente y programen revisiones periódicas de permisos y conservación."
       ]
     },
     "ia": {
       "label": "IA",
       "recommendations": [
-        "Elegid una tarea repetitiva y comprobad primero si puede resolverse con reglas sencillas.",
-        "Preparad un piloto con una muestra representativa, criterios de aceptación y revisión humana.",
-        "Ampliad solo los pilotos que hayan mostrado mejoras medibles y mantened un conjunto de pruebas para detectar errores."
+        "Elijan una tarea repetitiva y comprueben primero si puede resolverse con reglas sencillas.",
+        "Preparen un piloto con una muestra representativa, criterios de aceptación y revisión humana.",
+        "Amplíen solo los pilotos que hayan mostrado mejoras medibles y mantengan un conjunto de pruebas para detectar errores."
       ]
     }
   },
@@ -48,7 +48,7 @@
   "questions": [
     {
       "area": "procesos",
-      "prompt": "¿Está documentado vuestro proceso más repetitivo?",
+      "prompt": "¿Está documentado su proceso más repetitivo?",
       "options": [
         "Depende de quién lo haga",
         "Hay notas dispersas",
@@ -68,7 +68,7 @@
     },
     {
       "area": "procesos",
-      "prompt": "¿Cómo medís el resultado?",
+      "prompt": "¿Cómo miden el resultado?",
       "options": [
         "Todavía no lo medimos",
         "Tenemos estimaciones",
@@ -78,7 +78,7 @@
     },
     {
       "area": "infraestructura",
-      "prompt": "¿Qué sabéis de los sistemas críticos?",
+      "prompt": "¿Qué saben de los sistemas críticos?",
       "options": [
         "Dependemos de una persona para saber cómo funcionan",
         "Hay un inventario parcial",
@@ -88,7 +88,7 @@
     },
     {
       "area": "infraestructura",
-      "prompt": "¿Cómo recuperaríais un sistema tras una caída?",
+      "prompt": "¿Cómo recuperarían un sistema tras una caída?",
       "options": [
         "No tenemos un plan definido",
         "Hay copias, pero no hemos probado a restaurarlas",
@@ -98,17 +98,17 @@
     },
     {
       "area": "infraestructura",
-      "prompt": "¿Cómo controláis los costes tecnológicos?",
+      "prompt": "¿Cómo controlan los costos tecnológicos?",
       "options": [
         "Solo miramos la factura total",
-        "Revisamos los costes de vez en cuando",
+        "Revisamos los costos de vez en cuando",
         "Tenemos un presupuesto y una persona responsable",
         "Usamos alertas y revisamos las desviaciones"
       ]
     },
     {
       "area": "datos",
-      "prompt": "¿Tenéis una fuente fiable para los datos del proceso?",
+      "prompt": "¿Tienen una fuente confiable para los datos del proceso?",
       "options": [
         "Hay versiones contradictorias",
         "Consolidamos la información a mano",
@@ -118,7 +118,7 @@
     },
     {
       "area": "datos",
-      "prompt": "¿Cómo gestionáis el acceso y el uso de los datos?",
+      "prompt": "¿Cómo gestionan el acceso y el uso de los datos?",
       "options": [
         "Los accesos se comparten sin revisión",
         "Se conceden caso por caso",
@@ -128,7 +128,7 @@
     },
     {
       "area": "ia",
-      "prompt": "¿Tenéis una tarea concreta candidata a un piloto?",
+      "prompt": "¿Tienen una tarea concreta candidata a un piloto?",
       "options": [
         "Aún no la hemos identificado",
         "Tenemos ideas generales",
@@ -138,7 +138,7 @@
     },
     {
       "area": "ia",
-      "prompt": "¿Cómo validaríais una respuesta o un documento generado con IA?",
+      "prompt": "¿Cómo validarían una respuesta o un documento generado con IA?",
       "options": [
         "No lo hemos definido",
         "Se revisaría si alguien detecta un error",

@@ -11,4 +11,4 @@ steps:
 ---
 En el diagnóstico hablamos del flujo actual, de las aplicaciones que intervienen y de quién se encarga de cada paso. Con esa información podemos delimitar una primera mejora y decirte qué datos necesitamos para estimar su impacto.
 
-Antes de poner un cambio en marcha, acordamos cómo probarlo y quién decide que está listo. Tras la puesta en marcha, te dejamos la documentación para operarlo y revisamos juntos las métricas pactadas.
+Antes de poner un cambio en marcha, acordamos cómo probarlo y quién decide que está listo. Tras la implementación, te dejamos la documentación para operarlo y revisamos juntos las métricas pactadas.

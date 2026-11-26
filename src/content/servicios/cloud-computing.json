@@ -3,13 +3,13 @@
   "phase": "Escalar",
   "icon": "cloud",
   "name": "Cloud Computing",
-  "hero": "Migra a la nube con costes y riesgos bajo control",
-  "intro": "Planificamos la migración de tu pyme por fases, con seguridad, costes previsibles y copias que puedes restaurar.",
+  "hero": "Migra a la nube con costos y riesgos bajo control",
+  "intro": "Planificamos la migración de tu pyme por fases, con seguridad, costos previsibles y copias que puedes restaurar.",
   "cta": "Revisa tu migración con nosotros",
   "symptoms": [
     "Una aplicación crítica depende de un servidor en la oficina.",
     "Pagas recursos de nube que apenas utilizas.",
-    "Hace tiempo que nadie restaura una copia de seguridad."
+    "Hace tiempo que nadie restaura una copia de respaldo."
   ],
   "work": [
     [
@@ -17,7 +17,7 @@
       "Inventariamos las dependencias, probamos por etapas y preparamos un plan de reversión."
     ],
     [
-      "Optimización de costes",
+      "Optimización de costos",
       "Revisamos consumo, dimensionamiento y alertas de presupuesto."
     ],
     [
@@ -31,7 +31,7 @@
     "Revisar copias y ejecutar una restauración documentada."
   ],
   "results": [
-    "Coste mensual medido",
+    "Costo mensual medido",
     "Tiempo de recuperación",
     "Disponibilidad de la aplicación"
   ],
@@ -47,14 +47,14 @@
     ],
     [
       "¿Cómo estimo la factura?",
-      "Modelamos el coste con el uso actual y planteamos alertas para revisar desviaciones."
+      "Modelamos el costo con el uso actual y planteamos alertas para revisar desviaciones."
     ]
   ],
   "title": "Cloud Computing para pymes | Nexo Impulso",
-  "description": "Planificamos la migración de tu pyme por fases, con seguridad, costes previsibles y copias que puedes restaurar.",
+  "description": "Planificamos la migración de tu pyme por fases, con seguridad, costos previsibles y copias que puedes restaurar.",
   "summary": [
     "Migración por fases",
-    "Optimización de costes",
-    "Seguridad y copias de seguridad"
+    "Optimización de costos",
+    "Seguridad y copias de respaldo"
   ]
 }

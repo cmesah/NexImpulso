@@ -1,6 +1,6 @@
 # Nexo Impulso
 
-Web de consultoría para pymes en España, creada con Astro 6 y Tailwind CSS 4. Genera HTML estático y solo usa JavaScript para el menú móvil y las preferencias de analítica.
+Web de consultoría para pymes, creada con Astro 6 y Tailwind CSS 4. Genera HTML estático y solo usa JavaScript para el menú móvil y las preferencias de analítica.
 
 ## Instalar y ver en local
 

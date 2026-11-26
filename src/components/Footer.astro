@@ -11,7 +11,7 @@ const services = (await getCollection('servicios')).sort((a,b) => a.data.step.lo
           <img src="/nexo-icono.png" alt="Nexo Impulso, consultoría TI" width="38" height="38" />
           <strong aria-hidden="true">{site.nombre}</strong>
         </a>
-        <p>Modernización, nube e IA para pymes en España.</p>
+        <p>Modernización, nube e IA para pymes.</p>
       </div>
       <div><h2>Servicios</h2><ul>
         {services.map(service => <li><a href={'/servicios/' + service.id}>{service.data.name}</a></li>)}

@@ -15,13 +15,12 @@ const schema = {
   name: site.marca,
   url: Astro.site || undefined,
   sameAs: site.linkedin ? [site.linkedin] : undefined,
-  areaServed: { '@type': 'Country', name: 'España' },
   email: site.email || undefined,
   image: image || undefined,
 };
 ---
 <!doctype html>
-<html lang="es-ES">
+<html lang="es-419">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -32,7 +31,6 @@ const schema = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={type} />
-    <meta property="og:locale" content="es_ES" />
     <meta property="og:site_name" content={site.marca} />
     {canonical && <meta property="og:url" content={canonical} />}
     {image && <meta property="og:image" content={image} />}
