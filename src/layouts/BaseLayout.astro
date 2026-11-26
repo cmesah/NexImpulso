@@ -1,4 +1,5 @@
 ---
+import { isPreview } from '../lib/indexing';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -6,13 +7,13 @@ import CookieConsent from '../components/CookieConsent.astro';
 import WhatsAppLink from '../components/WhatsAppLink.astro';
 import site from '../content/sitio.json';
 const { title, description, type = 'website', noindex = false } = Astro.props;
-const canonical = site.dominio && new URL(Astro.url.pathname, site.dominio).href.replace(/\/$/, Astro.url.pathname === '/' ? '/' : '');
-const image = site.dominio && site.imagenSocial && new URL(site.imagenSocial, site.dominio).href;
+const canonical = Astro.site && new URL(Astro.url.pathname, Astro.site).href.replace(/\/$/, Astro.url.pathname === '/' ? '/' : '');
+const image = Astro.site && site.imagenSocial && new URL(site.imagenSocial, Astro.site).href;
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   name: site.marca,
-  url: site.dominio || undefined,
+  url: Astro.site || undefined,
   sameAs: site.linkedin ? [site.linkedin] : undefined,
   areaServed: { '@type': 'Country', name: 'España' },
   email: site.email || undefined,
@@ -26,7 +27,7 @@ const schema = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    {(noindex || !site.dominio) && <meta name="robots" content="noindex" />}
+    {(noindex || isPreview) && <meta name="robots" content="noindex" />}
     {canonical && <link rel="canonical" href={canonical} />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -38,7 +39,7 @@ const schema = {
     <link rel="icon" href="/nexo-icono.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&amp;family=Space+Grotesk:wght@500..700&amp;display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&amp;family=JetBrains+Mono:wght@400..600&amp;family=Space+Grotesk:wght@500..700&amp;display=swap" />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')}></script>
   </head>
   <body>
