@@ -2,55 +2,113 @@
 import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
-import Icon from '../components/Icon.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import FAQ from '../components/FAQ.astro';
 import ContactSection from '../components/sections/ContactSection.astro';
+import TransformationConsole from '../components/sections/TransformationConsole.astro';
 import WorkSteps from '../components/sections/WorkSteps.astro';
 import copy from '../content/inicio.json';
 import site from '../content/sitio.json';
 const [services, work, about] = await Promise.all([
   getCollection('servicios'), getEntry('paginas', 'como-trabajamos'), getEntry('paginas', 'quienes-somos'),
 ]);
+const order = ['03', '01', '02'];
+services.sort((a, b) => order.indexOf(a.data.step) - order.indexOf(b.data.step));
 ---
 <BaseLayout title={copy.title} description={copy.description}>
-  <section class="hero brand-hero">
+  <section class="hero brand-hero grid-surface">
     <div class="shell hero-grid">
       <div>
-        <p class="eyebrow"><span></span>{copy.etiqueta}</p>
-        <h1>{copy.hero}</h1>
+        <p class="eyebrow"><span aria-hidden="true"></span>{copy.etiqueta}</p>
+        <h1>{copy.hero} <em>{copy.heroAcento}</em></h1>
         <p class="lead">{copy.subtitulo}</p>
         <div class="actions">
           <Button href="#diagnostico" arrow>{copy.cta}</Button>
-          <Button href="#servicios" variant="outline">Ver servicios</Button>
+          <Button href="/test-madurez" variant="outline">Haz el test de madurez</Button>
         </div>
-        <ul class="trust">{copy.confianza.map(item => <li><Icon name="check" size={15} />{item}</li>)}</ul>
       </div>
-      <img class="brand-art" src="/nexo-simbolo.webp" alt="" width="640" height="640" fetchpriority="high" />
+      <TransformationConsole />
+    </div>
+    <div class="shell tech-strip">
+      <p>// tecnologías con las que trabajamos</p>
+      <ul>{copy.tecnologias.map(tech => <li>{tech}</li>)}</ul>
     </div>
   </section>
-  <section class="section white-section">
-    <div class="shell">
-      <h2>{copy.problemasTitulo}</h2>
-      <div class="grid-four">
-        {copy.problemas.map(([icon, title, text]) => <article class="problem-card"><span class="icon-box"><Icon name={icon} /></span><h3>{title}</h3><p>{text}</p></article>)}
-      </div>
-    </div>
+
+  <section class="white-section figures-band" aria-label="Experiencia en cifras">
+    <ul class="shell figures-grid">
+      {copy.cifras.map(([value, label, count]) => <li><strong>
+        {typeof count === 'number' ? <><span class="sr-only">{value}</span><span aria-hidden="true" data-count={count} data-prefix={String(value).startsWith('+') ? '+' : ''}>{value}</span></> : value}
+      </strong><span>{label}</span></li>)}
+    </ul>
   </section>
-  <section class="section dark-section" id="servicios">
-    <div class="shell">
+
+  <section class="section" id="servicios">
+    <div class="shell" data-reveal>
+      <p class="section-tag">// servicios</p>
       <h2>{copy.serviciosTitulo}</h2>
       <p class="lead">{copy.serviciosIntro}</p>
-      <div class="grid-three">{services.sort((a, b) => a.data.step.localeCompare(b.data.step)).map(service => <ServiceCard service={service} />)}</div>
+      <div class="bento">
+        {services.map(service => <ServiceCard service={service} />)}
+        <article class="bento-test">
+          <div><h3>¿Qué tan preparada está tu empresa para la nube y la IA?</h3><p>Responde 10 preguntas y recibe tres recomendaciones para avanzar.</p></div>
+          <Button href="/test-madurez" arrow>Empezar el test</Button>
+        </article>
+      </div>
     </div>
   </section>
-  {work && <section class="section"><div class="shell"><h2>{work.data.hero}</h2><p class="lead">{work.data.intro}</p><WorkSteps steps={work.data.steps ?? []} /><Button variant="text" href="/como-trabajamos" arrow>Conoce cómo trabajamos</Button></div></section>}
-  {about && <section class="section"><div class="shell about-grid">
-    <div class="mission"><h2>Nuestra misión</h2><p>{about.data.mision}</p></div>
-    <div><h2>{about.data.hero}</h2><p class="lead">{about.data.intro}</p>
-      <div class="actions"><Button variant="outline" href="/quienes-somos" arrow>Quiénes somos</Button>{site.linkedin && <Button variant="text" href={site.linkedin}>LinkedIn <Icon name="arrow-up-right" size={16} /></Button>}</div>
+
+  <section class="section white-section" id="sectores">
+    <div class="shell" data-reveal>
+      <p class="section-tag">// experiencia</p>
+      <h2>Rigor de banca y telecomunicaciones, a la medida de una pyme</h2>
+      <div class="grid-four">
+        {copy.sectores.map(([title, text]) => <article class="sector-card"><h3>{title}</h3><p>{text}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  {work && <section class="section"><div class="shell" data-reveal>
+    <h2>{work.data.hero}</h2><p class="lead">{work.data.intro}</p>
+    <WorkSteps steps={work.data.steps ?? []} />
+    <Button variant="text" href="/como-trabajamos" arrow>Conoce cómo trabajamos</Button>
+  </div></section>}
+
+  {about && <section class="section white-section"><div class="shell about-grid" data-reveal>
+    {site.fotoEquipo
+      ? <img class="team-photo" src={site.fotoEquipo} alt="Equipo de ingeniería de Nexo Impulso" width="480" height="400" loading="lazy" />
+      : <div class="team-photo team-placeholder">[Foto del equipo]</div>}
+    <div>
+      <p class="section-tag">// quiénes somos</p>
+      <h2>Ingenieros, no vendedores de tecnología.</h2>
+      <p class="lead">{about.data.intro}</p>
+      <ul class="tags"><li>AWS Certified Solutions Architect</li><li>Microsoft Azure</li><li>Kubernetes (EKS)</li></ul>
+      <div class="mission home-mission"><h3>nuestra_misión</h3><p>{about.data.mision}</p></div>
+      <Button variant="text" href="/quienes-somos" arrow>Conoce al equipo</Button>
     </div>
   </div></section>}
-  <section class="section white-section"><div class="shell faq-grid"><h2>{copy.faqTitulo}</h2><FAQ items={copy.faq} /></div></section>
+
+  <section class="section"><div class="shell faq-grid" data-reveal><h2>{copy.faqTitulo}</h2><FAQ items={copy.faq} /></div></section>
   <ContactSection />
 </BaseLayout>
+<script>
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      for (const { target, isIntersecting } of entries) {
+        if (!isIntersecting) continue;
+        observer.unobserve(target);
+        target.classList.add('revealed');
+        if (!(target instanceof HTMLElement) || !target.dataset.count) continue;
+        const total = Number(target.dataset.count);
+        const start = performance.now();
+        const update = (now: number) => {
+          const progress = Math.min((now - start) / 650, 1);
+          target.textContent = (target.dataset.prefix ?? '') + Math.round(progress * total);
+          if (progress < 1) requestAnimationFrame(update);
+        };
+        requestAnimationFrame(update);
+      }
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-reveal], [data-count]').forEach(item => observer.observe(item));
+  }
+</script>

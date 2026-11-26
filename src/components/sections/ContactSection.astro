@@ -8,13 +8,16 @@ const { page = false } = Astro.props;
 const Heading = page ? 'h1' : 'h2';
 ---
 <section class="section contact-section" id="diagnostico">
-  <div class="shell contact-grid">
+  <div class:list={['shell', 'contact-grid', !page && 'contact-panel grid-surface']}>
     <div>
       <span class="icon-box"><Icon name="calendar" /></span>
       <Heading>{copy.hero}</Heading>
       <p class="lead">{copy.intro}</p>
+      {!page && <Button href="#solicitud-diagnostico" arrow>Solicita tu diagnóstico gratuito</Button>}
       {site.calendly && <Button href={site.calendly} variant="outline" arrow>{copy.book}</Button>}
     </div>
-    <ContactForm name={page ? 'diagnostico-contacto' : 'diagnostico-inicio'} />
+    <div id={page ? undefined : "solicitud-diagnostico"}>
+      <ContactForm name={page ? 'diagnostico-contacto' : 'diagnostico-inicio'} />
+    </div>
   </div>
 </section>

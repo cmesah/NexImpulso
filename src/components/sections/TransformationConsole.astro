@@ -1,0 +1,22 @@
+---
+import copy from '../../content/inicio.json';
+---
+<figure class="transformation-console" aria-label="Demostración de una transformación tecnológica">
+  <figcaption class="console-bar">
+    <span aria-hidden="true" class="console-dots"><i></i><i></i><i></i></span>
+    <span>tu-empresa / transformación</span>
+  </figcaption>
+  <ol class="console-flow">
+    {copy.consola.map(([step, title, detail, status]) => (
+      <li class="console-step">
+        <div><p class="console-label">{step}</p><h2>{title}</h2><p>{detail}</p></div>
+        <span class="console-status">{status}</span>
+      </li>
+    ))}
+  </ol>
+  <div class="console-output">
+    <span>Simulación</span>
+    <code>$ terraform apply</code>
+    <p>✓ infraestructura desplegada sin cortes de servicio</p>
+  </div>
+</figure>
