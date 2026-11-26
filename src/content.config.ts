@@ -17,9 +17,9 @@ export const collections = {
     }),
   }),
   paginas: defineCollection({
-    loader: glob({ pattern: '{como-trabajo,sobre-mi}.md', base: './src/content' }),
+    loader: glob({ pattern: '{como-trabajamos,quienes-somos}.md', base: './src/content' }),
     schema: page.extend({
-      intro: z.string(), steps: z.array(pair).optional(),
+      intro: z.string(), mision: z.string().optional(), steps: z.array(pair).optional(),
     }),
   }),
   casos: defineCollection({

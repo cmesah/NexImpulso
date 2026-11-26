@@ -24,11 +24,11 @@ function logoFor(brand: string) {
   <section class="section white-section"><div class="shell"><h2>¿Te pasa esto?</h2>
     <ul class="grid-three symptom-list">{data.symptoms.map((text: string) => <li class="problem-card"><Icon name={data.icon} /><p>{text}</p></li>)}</ul>
   </div></section>
-  <section class="section"><div class="shell"><h2>Qué hago</h2><div class="grid-three">
+  <section class="section"><div class="shell"><h2>Qué hacemos</h2><div class="grid-three">
     {data.work.map(([title, text]: [string, string]) => <article class="problem-card"><h3>{title}</h3><p>{text}</p></article>)}
   </div></div></section>
   <section class="section white-section"><div class="shell faq-grid"><div><h2>Casos de uso</h2><ul class="check-list">{data.uses.map((use: string) => <li><Icon name="check" />{use}</li>)}</ul></div>
-    <div><h2>Resultados que mido</h2><ul class="check-list">{data.results.map((result: string) => <li><Icon name="check" />{result}</li>)}</ul></div>
+    <div><h2>Resultados que medimos</h2><ul class="check-list">{data.results.map((result: string) => <li><Icon name="check" />{result}</li>)}</ul></div>
   </div></section>
   <section class="section"><div class="shell"><h2>Tecnologías</h2><ul class="tags">
     {data.tech.map((brand: string) => <li>{logoFor(brand) ? <img width="22" height="22" loading="lazy" src={logoFor(brand)} alt="" />
@@ -36,7 +36,7 @@ function logoFor(brand: string) {
   </ul></div></section>
   <section class="section white-section"><div class="shell faq-grid"><h2>Preguntas frecuentes</h2><FAQ items={data.faq} /></div></section>
   <section class="section dark-section" id="consulta"><div class="shell">
-    <h2>{data.cta}</h2><p class="lead">Dedico 30 minutos a entender tu situación y valorar contigo un primer paso.</p>
+    <h2>{data.cta}</h2><p class="lead">Dedicamos 30 minutos a entender tu situación y valorar contigo un primer paso.</p>
     <div class="actions"><Button href="/contacto" arrow>Solicitar diagnóstico gratuito</Button>
       {next ? <Button variant="text" href={'/servicios/' + next.id} arrow>Siguiente paso · {next.data.name}</Button>
       : <Button variant="text" href="/#servicios" arrow>Ver todos los servicios</Button>}

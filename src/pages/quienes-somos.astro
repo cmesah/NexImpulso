@@ -1,0 +1,20 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import site from '../content/sitio.json';
+const entry = (await getEntry('paginas', 'quienes-somos'))!;
+const { Content } = await render(entry);
+const { data } = entry;
+---
+<BaseLayout title={data.title} description={data.description}>
+  <section class="hero brand-hero"><div class="shell hero-grid">
+    <div><h1>{data.hero}</h1><p class="lead">{data.intro}</p></div>
+    <img class="brand-art" src="/nexo-simbolo.webp" alt="" width="640" height="640" fetchpriority="high" />
+  </div></section>
+  <section class="section white-section"><div class="shell">
+    <div class="prose"><Content /></div>
+    <div class="mission"><h2>Nuestra misión</h2><p>{data.mision}</p></div>
+    <div class="actions"><Button href="/contacto" arrow>Habla con nosotros</Button>{site.linkedin && <Button href={site.linkedin} variant="outline">LinkedIn</Button>}</div>
+  </div></section>
+</BaseLayout>

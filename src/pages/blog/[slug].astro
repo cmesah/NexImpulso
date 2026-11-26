@@ -8,7 +8,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
-<BaseLayout title={entry.data.title + ' | César Mesa'} description={entry.data.description} type="article">
+<BaseLayout title={entry.data.title + ' | Nexo Impulso'} description={entry.data.description} type="article">
   <section class="page-hero"><div class="shell"><a href="/blog">Volver al blog</a><h1>{entry.data.title}</h1><p class="lead">{entry.data.description}</p></div></section>
-  <article class="section white-section"><div class="shell prose"><Content /><Button href="/contacto" arrow>Revisa tu proceso conmigo</Button></div></article>
+  <article class="section white-section"><div class="shell prose"><Content /><Button href="/contacto" arrow>Revisa tu proceso con nosotros</Button></div></article>
 </BaseLayout>

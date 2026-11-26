@@ -1,11 +1,10 @@
 {
-  "title": "César Mesa | Consultor TI para pymes en España",
-  "description": "Te ayudo a automatizar procesos empresariales, migrar a la nube y aplicar IA en tu pyme. Solicita un diagnóstico gratuito de 30 minutos.",
+  "title": "Nexo Impulso | Consultoría tecnológica para pymes en España",
+  "description": "Te ayudamos a automatizar procesos empresariales, migrar a la nube y aplicar IA en tu pyme. Solicita un diagnóstico gratuito de 30 minutos.",
   "etiqueta": "Modernización · Cloud · IA para empresas",
-  "hero": "Tu empresa, más rápida, más eficiente y lista para la IA.",
-  "subtitulo": "Ayudo a pymes a dejar atrás sistemas heredados y procesos manuales, migrar a la nube con costes controlados y aplicar IA donde de verdad ahorra tiempo.",
+  "hero": "Tecnología que impulsa tu negocio.",
+  "subtitulo": "Ayudamos a pymes a dejar atrás sistemas heredados y procesos manuales, migrar a la nube con costes controlados y aplicar IA donde de verdad ahorra tiempo.",
   "confianza": ["Más de 15 años de experiencia", "Trato directo", "Mejores prácticas de ingeniería"],
-  "disponibilidad": "Disponible para nuevos proyectos en [Mes de disponibilidad]",
   "cta": "Solicita tu diagnóstico gratuito",
   "problemasTitulo": "¿Qué está frenando a tu empresa?",
   "problemas": [
@@ -15,11 +14,11 @@
     ["timer", "Horas en tareas repetitivas", "Leer correos, registrar pedidos y preparar informes consume horas cada semana."]
   ],
   "serviciosTitulo": "Tres formas de mejorar tu operación",
-  "serviciosIntro": "Puedes empezar por el problema que más tiempo o dinero te cuesta. Te ayudo a decidir qué cambio tiene sentido ahora.",
+  "serviciosIntro": "Puedes empezar por el problema que más tiempo o dinero te cuesta. Te ayudamos a decidir qué cambio tiene sentido ahora.",
   "faqTitulo": "Preguntas frecuentes",
   "faq": [
-    ["¿Cuánto cuesta?", "La primera conversación de 30 minutos es gratuita. Si decides avanzar, te presento una propuesta con alcance, entregables y precio antes de empezar."],
-    ["¿Tengo que parar mi operación?", "Planifico los cambios por fases y pruebo el nuevo flujo antes de trasladar el trabajo. Si hace falta un corte, acordamos la ventana y cómo volver atrás."],
-    ["¿Mi empresa es demasiado pequeña para la IA?", "Lo importante es que haya una tarea repetitiva que se pueda medir. Si una automatización sencilla resuelve el problema, te propondré empezar por ahí."]
+    ["¿Cuánto cuesta?", "La primera conversación de 30 minutos es gratuita. Si decides avanzar, te presentamos una propuesta con alcance, entregables y precio antes de empezar."],
+    ["¿Tengo que parar mi operación?", "Planificamos los cambios por fases y probamos el nuevo flujo antes de trasladar el trabajo. Si hace falta un corte, acordamos la ventana y cómo volver atrás."],
+    ["¿Mi empresa es demasiado pequeña para la IA?", "Lo importante es que haya una tarea repetitiva que se pueda medir. Si una automatización sencilla resuelve el problema, te propondremos empezar por ahí."]
   ]
 }

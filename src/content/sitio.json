@@ -1,29 +1,29 @@
 {
-  "nombre": "César Mesa",
-  "marca": "César Mesa · Consultoría TI",
+  "nombre": "Nexo Impulso",
+  "marca": "Nexo Impulso",
   "dominio": "",
   "email": "",
   "linkedin": "",
   "calendly": "",
   "whatsapp": "",
   "plausibleScript": "",
-  "imagenSocial": "/social.png",
+  "imagenSocial": "/nexo-social.png",
   "menu": [
     [
       "Servicios",
       "/#servicios"
     ],
     [
-      "Cómo trabajo",
-      "/como-trabajo"
+      "Cómo trabajamos",
+      "/como-trabajamos"
     ],
     [
       "Casos",
       "/casos"
     ],
     [
-      "Sobre mí",
-      "/sobre-mi"
+      "Quiénes somos",
+      "/quienes-somos"
     ]
   ]
 }

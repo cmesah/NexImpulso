@@ -1,4 +1,4 @@
-# César Mesa · Consultoría TI
+# Nexo Impulso
 
 Web de consultoría para pymes en España, creada con Astro 6 y Tailwind CSS 4. Genera HTML estático y solo usa JavaScript para el menú móvil y las preferencias de analítica.
 
@@ -25,9 +25,9 @@ La vista local permite revisar el HTML del formulario. Netlify gestiona y confir
 | Qué cambiar | Archivo o carpeta |
 | --- | --- |
 | Nombre, dominio HTTPS, menú, correo, LinkedIn, Calendly y WhatsApp | `src/content/sitio.json` |
-| Portada, disponibilidad, CTA principal y preguntas frecuentes | `src/content/inicio.json` |
+| Portada, CTA principal y preguntas frecuentes | `src/content/inicio.json` |
 | Las tres páginas de servicio y sus resúmenes en la portada | `src/content/servicios/*.json` |
-| Método y presentación | `src/content/como-trabajo.md`, `src/content/sobre-mi.md` |
+| Método y presentación | `src/content/como-trabajamos.md`, `src/content/quienes-somos.md` |
 | Caso y resultado | `src/content/casos/proceso-credito.md` |
 | Formulario y confirmación | `src/content/contacto.json` |
 | Artículos y SEO del blog | `src/content/blog/`, `src/content/blog.json` |
@@ -35,9 +35,9 @@ La vista local permite revisar el HTML del formulario. Netlify gestiona y confir
 
 Conserva los campos YAML situados entre las dos líneas de tres guiones en los archivos Markdown. Para añadir un artículo, duplica el artículo de ejemplo, cambia el nombre del archivo, rellena título y descripción y vuelve a compilar.
 
-Añade una única imagen profesional como `src/assets/images/retrato.jpg` (también admite PNG, WebP o AVIF), preferiblemente con 900 px de ancho o más. Astro prepara tamaños WebP. La portada da prioridad al retrato principal y las apariciones posteriores cargan de forma diferida. Hasta añadirlo, se muestra el monograma.
+Los recursos de marca están en `public/`: símbolo `nexo-simbolo.webp`, icono `nexo-icono.png` y banner social `nexo-social.png`.
 
-Puedes añadir logos oficiales SVG en `src/assets/logos/`. Usa el nombre de la marca en minúsculas, separado por guiones, por ejemplo `microsoft-azure.svg`. Las marcas sin un SVG local o incluido se muestran por nombre. La imagen de Open Graph se configura en `imagenSocial` con una ruta como `/social.png` y el archivo correspondiente en `public/`.
+Puedes añadir logos oficiales SVG en `src/assets/logos/`. Usa el nombre de la marca en minúsculas, separado por guiones, por ejemplo `microsoft-azure.svg`. Las marcas sin un SVG local o incluido se muestran por nombre. La imagen de Open Graph se configura en `imagenSocial` con una ruta como `/nexo-social.png` y el archivo correspondiente en `public/`.
 
 ## Desplegar en Netlify
 

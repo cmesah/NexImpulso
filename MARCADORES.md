@@ -2,7 +2,6 @@
 
 | Marcador | Dónde rellenarlo |
 | --- | --- |
-| [Mes de disponibilidad] | `src/content/inicio.json`, campo `disponibilidad`. |
 | [-X %] | `src/content/casos/proceso-credito.md`, campo `metric`. Valida el dato, su unidad y el periodo antes de publicarlo. |
 | [Testimonio autorizado] | El mismo caso, campo `quote`. |
 | [Cliente] | El mismo caso, campo `attribution`. Usa una identificación aprobada. |
@@ -22,5 +21,3 @@
 | [Número de WhatsApp] | Opcional. `src/content/sitio.json`, campo `whatsapp`, con prefijo internacional. |
 | [URL del script de Plausible] | Opcional. `src/content/sitio.json`, campo `plausibleScript`. |
 | [Logos oficiales restantes] | `src/assets/logos/` para Bizagi, Power Apps, AWS, Azure, Amazon Bedrock y Power Automate. Se muestran por nombre mientras falten sus archivos. |
-
-La portada indica más de 15 años de experiencia. La presentación detalla más de 12 años en ingeniería y arquitectura.

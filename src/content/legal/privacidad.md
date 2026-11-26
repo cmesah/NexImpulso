@@ -1,11 +1,11 @@
 ---
-title: "Política de privacidad | César Mesa"
-description: "Información sobre cómo trato los datos enviados al solicitar un diagnóstico."
+title: "Política de privacidad | Nexo Impulso"
+description: "Información sobre cómo tratamos los datos enviados al solicitar un diagnóstico."
 hero: "Política de privacidad"
 ---
-El responsable del tratamiento es [Nombre legal completo]. Puedes escribirme a [Email profesional].
+El responsable del tratamiento es [Nombre legal completo]. Puedes escribirnos a [Email profesional].
 
-Uso el nombre, el correo, la empresa y el mensaje que me envías para atender tu solicitud y, cuando proceda, preparar una propuesta. Base jurídica aplicable: [Base jurídica validada]. Conservaré los datos durante [Plazo de conservación].
+Usamos el nombre, el correo, la empresa y el mensaje que nos envías para atender tu solicitud y, cuando proceda, preparar una propuesta. Base jurídica aplicable: [Base jurídica validada]. Conservaremos los datos durante [Plazo de conservación].
 
 Proveedores que intervienen, condiciones y transferencias internacionales cuando procedan: [Proveedores y garantías].
 

@@ -3,4 +3,4 @@ import Icon from './Icon.astro';
 import site from '../content/sitio.json';
 const number = site.whatsapp.replace(/[^0-9]/g, '');
 ---
-{number && <a href={'https://wa.me/' + number} class="whatsapp" aria-label="Contactar conmigo por WhatsApp"><Icon name="message" /></a>}
+{number && <a href={'https://wa.me/' + number} class="whatsapp" aria-label="Contactar con nosotros por WhatsApp"><Icon name="message" /></a>}

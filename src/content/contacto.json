@@ -1,18 +1,18 @@
 {
-  "title": "Diagnóstico gratuito de 30 minutos | César Mesa",
-  "description": "Cuéntame qué proceso quieres mejorar. Lo revisamos juntos en un diagnóstico gratuito de 30 minutos.",
+  "title": "Diagnóstico gratuito de 30 minutos | Nexo Impulso",
+  "description": "Cuéntanos qué proceso quieres mejorar. Lo revisamos juntos en un diagnóstico gratuito de 30 minutos.",
   "hero": "Hablemos 30 minutos. Sin compromiso.",
-  "intro": "Cuéntame qué te está quitando tiempo. En la primera llamada reviso contigo el problema y qué podrías mejorar primero.",
+  "intro": "Cuéntanos qué te está quitando tiempo. En la primera llamada revisamos contigo el problema y qué podrías mejorar primero.",
   "fields": [
     "Nombre",
     "Email",
     "Empresa",
     "¿Qué te gustaría mejorar?"
   ],
-  "privacy": "He leído la política de privacidad y solicito que me contactes para gestionar mi consulta.",
+  "privacy": "He leído la política de privacidad y solicito que el equipo me contacte para gestionar mi consulta.",
   "submit": "Solicitar diagnóstico",
   "book": "Reservar directamente en Calendly",
   "success": "Gracias por tu solicitud",
-  "successText": "He recibido tu mensaje. Te escribiré al correo que me has indicado para acordar la llamada.",
+  "successText": "Hemos recibido tu mensaje. Te escribiremos al correo que nos has indicado para acordar la llamada.",
   "privacySummary": "Responsable: [Nombre legal completo]. Finalidad: gestionar tu consulta. Base jurídica: [Base jurídica validada]. Destinatarios y transferencias: [Resumen de destinatarios y transferencias]. Puedes ejercer tus derechos según se detalla en la política de privacidad."
 }

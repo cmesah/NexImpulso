@@ -4,8 +4,8 @@
   "icon": "workflow",
   "name": "Modernización de procesos y sistemas",
   "hero": "Reduce el trabajo manual y recupera el control de tus procesos",
-  "intro": "Te ayudo a renovar aplicaciones heredadas, automatizar flujos y conectar tu ERP y tu CRM.",
-  "cta": "Revisa tu proceso conmigo",
+  "intro": "Te ayudamos a renovar aplicaciones heredadas, automatizar flujos y conectar tu ERP y tu CRM.",
+  "cta": "Revisa tu proceso con nosotros",
   "symptoms": [
     "Copias los datos de un pedido en varias aplicaciones.",
     "Las aprobaciones se quedan en correos sin responsable.",
@@ -14,15 +14,15 @@
   "work": [
     [
       "Rediseño de flujos",
-      "Dibujo el recorrido real del trabajo y priorizo los pasos que se pueden simplificar."
+      "Dibujamos el recorrido real del trabajo y priorizamos los pasos que se pueden simplificar."
     ],
     [
       "Modernización gradual",
-      "Reviso qué partes del sistema conviene actualizar por separado y preparo la transición."
+      "Revisamos qué partes del sistema conviene actualizar por separado y preparamos la transición."
     ],
     [
       "Integración de ERP y CRM",
-      "Conecto aplicaciones para que compartan los datos necesarios de forma trazable."
+      "Conectamos aplicaciones para que compartan los datos necesarios de forma trazable."
     ]
   ],
   "uses": [
@@ -43,15 +43,15 @@
   "faq": [
     [
       "¿Hay que sustituir mi ERP?",
-      "Primero reviso qué flujos e integraciones admite el ERP que ya utilizas."
+      "Primero revisamos qué flujos e integraciones admite el ERP que ya utilizas."
     ],
     [
       "¿Cómo sé si merece la pena?",
-      "Mido el tiempo y los errores del proceso actual y comparo el resultado después de un piloto."
+      "Medimos el tiempo y los errores del proceso actual y comparamos el resultado después de un piloto."
     ]
   ],
-  "title": "Modernización de procesos y sistemas para pymes | César Mesa",
-  "description": "Te ayudo a renovar aplicaciones heredadas, automatizar flujos y conectar tu ERP y tu CRM.",
+  "title": "Modernización de procesos y sistemas para pymes | Nexo Impulso",
+  "description": "Te ayudamos a renovar aplicaciones heredadas, automatizar flujos y conectar tu ERP y tu CRM.",
   "summary": [
     "Migración de sistemas heredados",
     "Automatización de flujos",

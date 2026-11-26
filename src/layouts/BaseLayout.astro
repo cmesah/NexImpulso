@@ -8,13 +8,15 @@ import site from '../content/sitio.json';
 const { title, description, type = 'website', noindex = false } = Astro.props;
 const canonical = site.dominio && new URL(Astro.url.pathname, site.dominio).href.replace(/\/$/, Astro.url.pathname === '/' ? '/' : '');
 const image = site.dominio && site.imagenSocial && new URL(site.imagenSocial, site.dominio).href;
-const personId = site.dominio ? new URL('#cesar-mesa', site.dominio).href : '#cesar-mesa';
 const schema = {
   '@context': 'https://schema.org',
-  '@graph': [
-    { '@type': 'Person', '@id': personId, name: site.nombre, jobTitle: 'Consultor TI y arquitecto de soluciones', url: site.dominio || undefined, sameAs: site.linkedin ? [site.linkedin] : undefined },
-    { '@type': 'ProfessionalService', name: site.marca, founder: { '@id': personId }, url: site.dominio || undefined, areaServed: { '@type': 'Country', name: 'España' }, email: site.email || undefined, image: image || undefined },
-  ],
+  '@type': 'ProfessionalService',
+  name: site.marca,
+  url: site.dominio || undefined,
+  sameAs: site.linkedin ? [site.linkedin] : undefined,
+  areaServed: { '@type': 'Country', name: 'España' },
+  email: site.email || undefined,
+  image: image || undefined,
 };
 ---
 <!doctype html>
@@ -33,7 +35,7 @@ const schema = {
     <meta property="og:site_name" content={site.marca} />
     {canonical && <meta property="og:url" content={canonical} />}
     {image && <meta property="og:image" content={image} />}
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/nexo-icono.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&amp;family=Space+Grotesk:wght@500..700&amp;display=swap" />

@@ -6,7 +6,7 @@ export async function GET() {
     getCollection('servicios'), getCollection('blog'), getCollection('legal'),
   ]);
   const paths = [
-    '/', '/como-trabajo', '/casos', '/sobre-mi', '/blog', '/contacto',
+    '/', '/como-trabajamos', '/casos', '/quienes-somos', '/blog', '/contacto',
     ...services.map(item => '/servicios/' + item.id),
     ...articles.map(item => '/blog/' + item.id),
     ...legal.map(item => '/' + item.id),

@@ -4,8 +4,8 @@
   "icon": "cloud",
   "name": "Cloud Computing",
   "hero": "Migra a la nube con costes y riesgos bajo control",
-  "intro": "Planifico la migración de tu pyme por fases, con seguridad, costes previsibles y copias que puedes restaurar.",
-  "cta": "Revisa tu migración conmigo",
+  "intro": "Planificamos la migración de tu pyme por fases, con seguridad, costes previsibles y copias que puedes restaurar.",
+  "cta": "Revisa tu migración con nosotros",
   "symptoms": [
     "Una aplicación crítica depende de un servidor en la oficina.",
     "Pagas recursos de nube que apenas utilizas.",
@@ -14,15 +14,15 @@
   "work": [
     [
       "Migración a la nube para pymes",
-      "Inventario las dependencias, pruebo por etapas y preparo un plan de reversión."
+      "Inventariamos las dependencias, probamos por etapas y preparamos un plan de reversión."
     ],
     [
       "Optimización de costes",
-      "Reviso consumo, dimensionamiento y alertas de presupuesto."
+      "Revisamos consumo, dimensionamiento y alertas de presupuesto."
     ],
     [
       "Continuidad y seguridad",
-      "Defino objetivos de recuperación y pruebo las restauraciones con un alcance acordado."
+      "Definimos objetivos de recuperación y probamos las restauraciones con un alcance acordado."
     ]
   ],
   "uses": [
@@ -43,15 +43,15 @@
   "faq": [
     [
       "¿Necesitaré una parada?",
-      "Depende de la aplicación. Durante el plan determino si hace falta una ventana y cómo limitar su duración."
+      "Depende de la aplicación. Durante el plan determinamos si hace falta una ventana y cómo limitar su duración."
     ],
     [
       "¿Cómo estimo la factura?",
-      "Modelo el coste con el uso actual y planteo alertas para revisar desviaciones."
+      "Modelamos el coste con el uso actual y planteamos alertas para revisar desviaciones."
     ]
   ],
-  "title": "Cloud Computing para pymes | César Mesa",
-  "description": "Planifico la migración de tu pyme por fases, con seguridad, costes previsibles y copias que puedes restaurar.",
+  "title": "Cloud Computing para pymes | Nexo Impulso",
+  "description": "Planificamos la migración de tu pyme por fases, con seguridad, costes previsibles y copias que puedes restaurar.",
   "summary": [
     "Migración por fases",
     "Optimización de costes",

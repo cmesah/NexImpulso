@@ -10,6 +10,6 @@ const cases = await Promise.all((await getCollection('casos')).map(async entry =
   <section class="page-hero"><div class="shell"><h1>{copy.hero}</h1><p class="lead">{copy.intro}</p></div></section>
   <section class="section white-section"><div class="shell">
     {cases.map(({data, Content}) => <div class="case-detail"><CaseCard data={data} /><div class="prose"><Content /></div></div>)}
-    <Button href="/contacto" arrow>Cuéntame tu caso</Button>
+    <Button href="/contacto" arrow>Cuéntanos tu caso</Button>
   </div></section>
 </BaseLayout>

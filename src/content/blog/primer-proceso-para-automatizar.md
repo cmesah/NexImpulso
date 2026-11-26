@@ -1,6 +1,6 @@
 ---
 title: "Cómo elegir el primer proceso que automatizar en tu pyme"
-description: "Te explico cómo escoger una primera automatización y medir si realmente ahorra tiempo."
+description: "Te explicamos cómo escoger una primera automatización y medir si realmente ahorra tiempo."
 ---
 Empieza por una tarea que se repita varias veces por semana y que tenga un responsable claro. Los pedidos que llegan por correo, las solicitudes de compra y la revisión de albaranes son buenos candidatos para observar.
 

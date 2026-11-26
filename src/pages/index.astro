@@ -5,23 +5,20 @@ import Button from '../components/Button.astro';
 import Icon from '../components/Icon.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import FAQ from '../components/FAQ.astro';
-import Portrait from '../components/Portrait.astro';
 import ContactSection from '../components/sections/ContactSection.astro';
 import WorkSteps from '../components/sections/WorkSteps.astro';
-import CaseCard from '../components/sections/CaseCard.astro';
 import copy from '../content/inicio.json';
 import site from '../content/sitio.json';
-const [services, work, about, example] = await Promise.all([
-  getCollection('servicios'), getEntry('paginas', 'como-trabajo'), getEntry('paginas', 'sobre-mi'), getEntry('casos', 'proceso-credito'),
+const [services, work, about] = await Promise.all([
+  getCollection('servicios'), getEntry('paginas', 'como-trabajamos'), getEntry('paginas', 'quienes-somos'),
 ]);
-const [headline, emphasis] = copy.hero.split(', más eficiente y ');
 ---
 <BaseLayout title={copy.title} description={copy.description}>
-  <section class="hero">
+  <section class="hero brand-hero">
     <div class="shell hero-grid">
       <div>
         <p class="eyebrow"><span></span>{copy.etiqueta}</p>
-        <h1>{headline}{emphasis && <>, más eficiente y <em>{emphasis}</em></>}</h1>
+        <h1>{copy.hero}</h1>
         <p class="lead">{copy.subtitulo}</p>
         <div class="actions">
           <Button href="#diagnostico" arrow>{copy.cta}</Button>
@@ -29,7 +26,7 @@ const [headline, emphasis] = copy.hero.split(', más eficiente y ');
         </div>
         <ul class="trust">{copy.confianza.map(item => <li><Icon name="check" size={15} />{item}</li>)}</ul>
       </div>
-      <Portrait hero />
+      <img class="brand-art" src="/nexo-simbolo.webp" alt="" width="640" height="640" fetchpriority="high" />
     </div>
   </section>
   <section class="section white-section">
@@ -47,12 +44,11 @@ const [headline, emphasis] = copy.hero.split(', más eficiente y ');
       <div class="grid-three">{services.sort((a, b) => a.data.step.localeCompare(b.data.step)).map(service => <ServiceCard service={service} />)}</div>
     </div>
   </section>
-  {work && <section class="section"><div class="shell"><h2>{work.data.hero}</h2><p class="lead">{work.data.intro}</p><WorkSteps steps={work.data.steps ?? []} /><Button variant="text" href="/como-trabajo" arrow>Conoce mi forma de trabajar</Button></div></section>}
-  {example && <section class="section white-section"><div class="shell"><h2>Un caso de modernización</h2><CaseCard data={example.data} /><Button variant="text" href="/casos" arrow>Leer el caso completo</Button></div></section>}
+  {work && <section class="section"><div class="shell"><h2>{work.data.hero}</h2><p class="lead">{work.data.intro}</p><WorkSteps steps={work.data.steps ?? []} /><Button variant="text" href="/como-trabajamos" arrow>Conoce cómo trabajamos</Button></div></section>}
   {about && <section class="section"><div class="shell about-grid">
-    <Portrait />
+    <div class="mission"><h2>Nuestra misión</h2><p>{about.data.mision}</p></div>
     <div><h2>{about.data.hero}</h2><p class="lead">{about.data.intro}</p>
-      <div class="actions"><Button variant="outline" href="/sobre-mi" arrow>Sobre mí</Button>{site.linkedin && <Button variant="text" href={site.linkedin}>LinkedIn <Icon name="arrow-up-right" size={16} /></Button>}</div>
+      <div class="actions"><Button variant="outline" href="/quienes-somos" arrow>Quiénes somos</Button>{site.linkedin && <Button variant="text" href={site.linkedin}>LinkedIn <Icon name="arrow-up-right" size={16} /></Button>}</div>
     </div>
   </div></section>}
   <section class="section white-section"><div class="shell faq-grid"><h2>{copy.faqTitulo}</h2><FAQ items={copy.faq} /></div></section>
