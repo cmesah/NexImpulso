@@ -5,30 +5,39 @@ import Icon from './Icon.astro';
 ---
 <header class="site-header">
   <div class="shell nav-row">
-    <a class="brand" href="/" aria-label={site.marca + ', inicio'}>
-      <img src="/nexo-icono.png" alt="" width="40" height="40" />
-      <span><strong>{site.nombre}</strong><small>Consultoría TI</small></span>
+    <a class="brand" href="/">
+      <img src="/nexo-icono.png" alt="Nexo Impulso, consultoría TI" width="40" height="40" />
+      <span aria-hidden="true"><strong>{site.nombre}</strong><small>Consultoría TI</small></span>
     </a>
-    <nav class="desktop-nav" aria-label="Principal">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="principal">
+      <Icon name="menu" /><span class="sr-only">Menú principal</span>
+    </button>
+    <nav id="principal" class="site-nav" aria-label="Principal">
       {site.menu.map(([label, href]) => <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a>)}
+      <Button href="/contacto">Diagnóstico gratuito</Button>
     </nav>
-    <Button class="nav-cta" href="/contacto">Diagnóstico gratuito</Button>
-    <details class="mobile-nav">
-      <summary aria-label="Menú principal"><Icon name="menu" /></summary>
-      <nav aria-label="Principal móvil">
-        {site.menu.map(([label, href]) => <a href={href}>{label}</a>)}
-        <Button href="/contacto">Diagnóstico gratuito</Button>
-      </nav>
-    </details>
   </div>
 </header>
 <script>
-  const menu = document.querySelector<HTMLDetailsElement>('.mobile-nav');
-  menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menu.open = false; }));
-  menu?.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && menu.open) {
-      menu.open = false;
-      menu.querySelector('summary')?.focus();
-    }
-  });
+  const header = document.querySelector<HTMLElement>('.site-header');
+  const toggle = header?.querySelector<HTMLButtonElement>('.menu-toggle');
+  const nav = header?.querySelector('nav');
+  if (header && toggle && nav) {
+    header.dataset.enhanced = '';
+    const setOpen = (open: boolean) => toggle.setAttribute('aria-expanded', String(open));
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') === 'false'));
+    nav.addEventListener('click', event => {
+      if (event.target instanceof Element && event.target.closest('a') && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+    header.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+    matchMedia('(min-width: 900px)').addEventListener('change', () => setOpen(false));
+  }
 </script>

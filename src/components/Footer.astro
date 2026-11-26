@@ -1,21 +1,41 @@
 ---
 import site from '../content/sitio.json';
+import { getCollection } from 'astro:content';
+const services = (await getCollection('servicios')).sort((a,b) => a.data.step.localeCompare(b.data.step));
 ---
 <footer class="site-footer">
-  <div class="shell footer-row">
-    <a class="brand" href="/">
-      <img src="/nexo-icono.png" alt="" width="38" height="38" />
-      <span><strong>{site.nombre}</strong><small>Consultoría TI</small></span>
-    </a>
-    <nav aria-label="Contacto y páginas legales">
-      <a href="/contacto">Contacto</a>
-      {site.email && <a href={'mailto:' + site.email}>Correo</a>}
-      {site.linkedin && <a href={site.linkedin}>LinkedIn</a>}
-      <a href="/blog">Blog</a>
-      <a href="/aviso-legal">Aviso legal</a>
-      <a href="/privacidad">Privacidad</a>
-      <a href="/cookies">Cookies</a>
-      {site.plausibleScript && <button type="button" data-cookie-settings>Preferencias</button>}
-    </nav>
+  <div class="shell">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <img src="/nexo-icono.png" alt="Nexo Impulso, consultoría TI" width="38" height="38" />
+          <strong aria-hidden="true">{site.nombre}</strong>
+        </a>
+        <p>Modernización, nube e IA para pymes en España.</p>
+      </div>
+      <div><h2>Servicios</h2><ul>
+        {services.map(service => <li><a href={'/servicios/' + service.id}>{service.data.name}</a></li>)}
+      </ul></div>
+      <div><h2>Empresa</h2><ul>
+        <li><a href="/quienes-somos">Quiénes somos</a></li>
+        <li><a href="/como-trabajamos">Cómo trabajamos</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul></div>
+      <div><h2>Contacto</h2><ul>
+        <li><a href="/contacto">Solicita un diagnóstico</a></li>
+        <li>{site.email ? <a href={'mailto:' + site.email}>{site.email}</a> : '[Email]'}</li>
+        <li>{site.telefono ? <a href={'tel:' + site.telefono.replace(/\s/g, '')}>{site.telefono}</a> : '[Teléfono]'}</li>
+        <li>{site.linkedin ? <a href={site.linkedin}>LinkedIn</a> : '[LinkedIn]'}</li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© {new Date().getUTCFullYear()} {site.nombre}</p>
+      <nav aria-label="Páginas legales">
+        <a href="/aviso-legal">Aviso legal</a>
+        <a href="/privacidad">Privacidad</a>
+        <a href="/cookies">Cookies</a>
+        {site.plausibleScript && <button type="button" data-cookie-settings>Preferencias</button>}
+      </nav>
+    </div>
   </div>
 </footer>

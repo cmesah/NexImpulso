@@ -31,7 +31,7 @@ function logoFor(brand: string) {
     <div><h2>Resultados que medimos</h2><ul class="check-list">{data.results.map((result: string) => <li><Icon name="check" />{result}</li>)}</ul></div>
   </div></section>
   <section class="section"><div class="shell"><h2>Tecnologías</h2><ul class="tags">
-    {data.tech.map((brand: string) => <li>{logoFor(brand) ? <img width="22" height="22" loading="lazy" src={logoFor(brand)} alt="" />
+    {data.tech.map((brand: string) => <li>{logoFor(brand) ? <img width="22" height="22" loading="lazy" src={logoFor(brand)} alt={'Logotipo de ' + brand} />
       : fallbackLogos[brand] && <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d={fallbackLogos[brand].path} /></svg>}{brand}</li>)}
   </ul></div></section>
   <section class="section white-section"><div class="shell faq-grid"><h2>Preguntas frecuentes</h2><FAQ items={data.faq} /></div></section>
