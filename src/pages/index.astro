@@ -77,12 +77,12 @@ services.sort((a, b) => order.indexOf(a.data.step) - order.indexOf(b.data.step))
   {about && <section class="section white-section"><div class="shell about-grid" data-reveal>
     {site.fotoEquipo
       ? <img class="team-photo" src={site.fotoEquipo} alt="Equipo de ingeniería de Nexo Impulso" width="480" height="400" loading="lazy" />
-      : <div class="team-photo team-placeholder">[Foto del equipo]</div>}
+      : <img class="team-photo" src="/crecimiento-cloud-ia-480.webp" srcset="/crecimiento-cloud-ia-480.webp 480w, /crecimiento-cloud-ia-960.webp 960w" sizes="(max-width: 760px) 91vw, 480px" alt="Tres plataformas ascendentes conectadas a una nube con una red de inteligencia artificial" width="480" height="400" loading="lazy" decoding="async" />}
     <div>
       <p class="section-tag">// quiénes somos</p>
-      <h2>Ingenieros, no vendedores de tecnología.</h2>
+      <h2>Ingenieros que impulsan tu negocio</h2>
       <p class="lead">{about.data.intro}</p>
-      <ul class="tags"><li>AWS Certified Solutions Architect</li><li>Microsoft Azure</li><li>Kubernetes (EKS)</li></ul>
+      <ul class="tags"><li>AWS Certified Solutions Architect</li><li>Microsoft Azure</li><li>Google Cloud (GCP)</li><li>Kubernetes (EKS)</li></ul>
       <div class="mission home-mission"><h3>nuestra_misión</h3><p>{about.data.mision}</p></div>
       <Button variant="text" href="/quienes-somos" arrow>Conoce al equipo</Button>
     </div>

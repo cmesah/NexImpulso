@@ -16,10 +16,10 @@
   ],
   "serviciosTitulo": "Tres formas de mejorar tu operación",
   "serviciosIntro": "Empieza por el problema que más tiempo o dinero te cuesta.",
-  "tecnologias": ["AWS", "Azure", "Kubernetes", "Terraform", "Docker", "Serverless", "CI/CD"],
+  "tecnologias": ["AWS", "Azure", "Google Cloud", "Kubernetes", "Terraform", "Docker", "Serverless", "CI/CD"],
   "cifras": [["+15", "años en ingeniería de software y cloud", 15], ["AWS", "Certified Solutions Architect", null], ["4", "sectores regulados", 4], ["[X]", "proyectos entregados", null]],
   "sectores": [["Banca", "Continuidad y trazabilidad en operaciones críticas."], ["Fintech", "Integraciones de pago con controles de seguridad."], ["Telecomunicaciones", "Plataformas preparadas para picos de demanda."], ["Energía", "Integración y visibilidad de sistemas operativos críticos."]],
-  "consola": [["01 · hoy", "Sistemas heredados", "ERP antiguo · Excel · servidores locales", "lento"], ["02 · escalar", "Cloud en AWS / Azure", "contenedores · serverless · IaC", "escalable"], ["03 · automatizar", "IA en operaciones", "documentos · asistentes · previsión", "inteligente"]],
+  "consola": [["01 · hoy", "Sistemas heredados", "ERP antiguo · Excel · servidores locales", "lento"], ["02 · escalar", "Cloud en AWS / Azure / Google Cloud", "contenedores · serverless · IaC", "escalable"], ["03 · automatizar", "IA en operaciones", "documentos · asistentes · previsión", "inteligente"]],
   "faqTitulo": "Preguntas frecuentes",
   "faq": [
     ["¿En qué nos puede ayudar Nexo Impulso?", "Ayudamos a pymes a automatizar tareas manuales, modernizar aplicaciones, migrar a la nube y aplicar IA a procesos concretos. Por ejemplo, podemos revisar cómo entran los pedidos, por qué se duplican datos y qué parte del proceso merece automatizarse primero."],

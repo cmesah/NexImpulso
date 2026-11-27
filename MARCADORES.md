@@ -20,9 +20,8 @@
 | [URL de Calendly] | `src/content/sitio.json`, campo `calendly`. |
 | [Número de WhatsApp] | Opcional. `src/content/sitio.json`, campo `whatsapp`, con prefijo internacional. |
 | [URL del script de Plausible] | Opcional. `src/content/sitio.json`, campo `plausibleScript`. |
-| [Logos oficiales restantes] | `src/assets/logos/` para Bizagi, Power Apps, AWS, Azure, Amazon Bedrock y Power Automate. Se muestran por nombre mientras falten sus archivos. |
+| [Logos oficiales restantes] | `src/assets/logos/` para Bizagi, Power Apps, AWS, Azure, Google Cloud, Amazon Bedrock y Power Automate. Se muestran por nombre mientras falten sus archivos. |
 | [X] proyectos entregados | `src/content/inicio.json`, campo `cifras`. |
-| [Foto del equipo] | `src/content/sitio.json`, campo `fotoEquipo`. |
 | [Email] | `src/content/sitio.json`, campo `email`. |
 | [Teléfono] | `src/content/sitio.json`, campo `telefono`. |
 | [LinkedIn] | `src/content/sitio.json`, campo `linkedin`. |

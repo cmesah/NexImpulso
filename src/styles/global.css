@@ -230,7 +230,6 @@ summary::-webkit-details-marker { display: none; }
 .bento-test .btn:hover { background: var(--color-accent-hover); }
 .step-number { font-family: var(--font-mono); }
 .team-photo { width: 100%; aspect-ratio: 6 / 5; object-fit: cover; border-radius: 18px; }
-.team-placeholder { display: grid; place-items: center; background: var(--color-paper); border: 1px dashed var(--color-console-border); color: var(--color-muted); }
 .home-mission { background: var(--color-ink); color: white; }
 .home-mission h3 { font: 500 .85rem var(--font-mono); color: var(--color-turquoise); margin-bottom: .5rem; }
 .home-mission p { color: var(--color-on-dark); }
